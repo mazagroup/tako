@@ -1,0 +1,5 @@
+Bundle-Version: 1.0.0.${tstamp}
+Export-Package: \
+	org.tako.jpa.core.api.dao,\
+	org.tako.jpa.core.api.service,\
+	org.tako.jpa.core.api

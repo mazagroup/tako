@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description">
+  <viewpoint:DAnalysis xmi:id="_0QPZcJpJEeevZdc3rIzZFw" selectedViews="_0dGJsJpJEeevZdc3rIzZFw" version="12.0.0.201704271200">
+    <semanticResources>models.ecore</semanticResources>
+    <semanticResources>models.genmodel</semanticResources>
+    <semanticResources>../texo_models/Catalog.xsd</semanticResources>
+    <semanticResources>bundleentry://855.fwk2107105388/cache/www.w3.org/2001/XMLSchema-instance.xsd</semanticResources>
+    <semanticResources>bundleentry://855.fwk2107105388/cache/www.w3.org/2001/XMLSchema.xsd</semanticResources>
+    <semanticResources>../texo_models/Claim.xsd</semanticResources>
+    <semanticResources>bundleentry://855.fwk2107105388/cache/www.w3.org/2001/MagicXMLSchema.xsd</semanticResources>
+    <semanticResources>http://www.w3.org/2001/xml.xsd</semanticResources>
+    <semanticResources>../texo_models/SchemaPrimerPO.xsd</semanticResources>
+    <semanticResources>../texo_models/Workflow.ecore</semanticResources>
+    <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
+    <semanticResources>../texo_models/accounting.ecore</semanticResources>
+    <semanticResources>http://www.eclipse.org/emf/2003/XMLType</semanticResources>
+    <semanticResources>../texo_models/capa.xsd</semanticResources>
+    <semanticResources>../texo_models/employee.xsd</semanticResources>
+    <semanticResources>../texo_models/epo2.ecore</semanticResources>
+    <semanticResources>../texo_models/extlibrary.ecore</semanticResources>
+    <semanticResources>../texo_models/forum.xsd</semanticResources>
+    <semanticResources>../texo_models/interfaces.ecore</semanticResources>
+    <semanticResources>../texo_models/inventory.ecore</semanticResources>
+    <semanticResources>../texo_models/library.ecore</semanticResources>
+    <semanticResources>../texo_models/music.ecore</semanticResources>
+    <semanticResources>../texo_models/play.xsd</semanticResources>
+    <semanticResources>../texo_models/schoollibrary.ecore</semanticResources>
+    <semanticResources>../texo_models/sun_books.xsd</semanticResources>
+    <semanticResources>../texo_models/types.ecore</semanticResources>
+    <semanticResources>../texo_models/accounting.genmodel</semanticResources>
+    <semanticResources>../texo_models/music.genmodel</semanticResources>
+    <ownedViews xmi:type="viewpoint:DView" xmi:id="_0dGJsJpJEeevZdc3rIzZFw">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_0g-kIJpJEeevZdc3rIzZFw" name="models" repPath="#_0g7g0JpJEeevZdc3rIzZFw">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
+        <target xmi:type="ecore:EPackage" href="models.ecore#/"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+  </viewpoint:DAnalysis>
+  <diagram:DSemanticDiagram xmi:id="_0g7g0JpJEeevZdc3rIzZFw" name="models">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_0g7g0ZpJEeevZdc3rIzZFw" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_0g7g0ppJEeevZdc3rIzZFw"/>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_0hW-oJpJEeevZdc3rIzZFw" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_0hW-oZpJEeevZdc3rIzZFw" type="Sirius" element="_0g7g0JpJEeevZdc3rIzZFw" measurementUnit="Pixel">
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_0hW-oppJEeevZdc3rIzZFw"/>
+      </data>
+    </ownedAnnotationEntries>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_0g7g1JpJEeevZdc3rIzZFw"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer"/>
+    <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@additionalLayers[name='Package']"/>
+    <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@additionalLayers[name='Validation']"/>
+    <target xmi:type="ecore:EPackage" href="models.ecore#/"/>
+  </diagram:DSemanticDiagram>
+</xmi:XMI>

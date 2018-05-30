@@ -1,0 +1,4 @@
+-dsannotations-options: inherit
+Bundle-Version: 1.0.0.${tstamp}
+Export-Package: org.springframework.roo.model
+-buildfeatures: base, takodeps

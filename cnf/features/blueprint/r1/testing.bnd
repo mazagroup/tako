@@ -1,0 +1,46 @@
+#
+# Amdatu Blueprint testing feature
+#
+blueprint-feature.testing: testing
+blueprint-repo.testing: http://amdatu-repo.s3.amazonaws.com/amdatu-testing/r11/repo/index.xml.gz
+
+blueprint-deps.testing: \
+	org.mockito:mockito-core:2.13.0,\
+	org.objenesis:objenesis:2.6,\
+	net.bytebuddy:byte-buddy-agent:1.7.5,\
+	net.bytebuddy:byte-buddy:1.7.5,\
+	org.apache.servicemix.bundles:org.apache.servicemix.bundles.junit:4.12_1
+
+#
+# Build
+#
+# Junit and mockito are added to the testpath in the base feature, add them to the buildpath
+# when the testing run feature is enabled to allow using these dependencies from the src folder.
+-buildpath.blueprint-testing: \
+  ${if;(|(buildfeaturesMerged[]=testing)(runfeaturesMerged[]=testing)); \
+		org.amdatu.testing.configurator,\
+		org.apache.servicemix.bundles.junit,\
+		org.mockito.mockito-core,\
+		org.objenesis,\
+		net.bytebuddy.byte-buddy,\
+		net.bytebuddy.byte-buddy-agent\
+	}
+
+#
+# Run
+#
+-runbundles.blueprint-testing: \
+	${if;(runfeaturesMerged[]=testing); \
+		org.amdatu.testing.configurator,\
+		org.apache.servicemix.bundles.junit,\
+		org.mockito.mockito-core,\
+		org.objenesis,\
+		net.bytebuddy.byte-buddy,\
+		net.bytebuddy.byte-buddy-agent\
+	}
+
+-runsystempackages.blueprint-testing: \
+	${if;(runfeaturesMerged[]=testing); \
+		sun.misc,\
+		sun.reflect\
+	}

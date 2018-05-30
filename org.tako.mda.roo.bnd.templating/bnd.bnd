@@ -1,0 +1,24 @@
+-testfeatures: testing
+
+-conditionalpackage: \
+	org.stringtemplate.*, \
+	st4hidden.*, \
+	aQute.lib.*, \
+	aQute.libg.*,\
+	com.github.mustachejava.*,\
+	com.google.common.*
+Bundle-ActivationPolicy: lazy
+
+Import-Package: sun.misc; resolution:=optional, *
+Bundle-Version: 1.0.0.${tstamp}
+Export-Package: \
+	org.bndtools.templating.util,\
+	org.bndtools.templating
+-runfw: ${frameworklib}
+-buildpath: \
+	${bndlib},\
+	org.tako.wrapped.github-spullara-mustache;version="[0.8,1)",\
+	org.tako.wrapped.antlr-ST4-4.0.8;version="[4.0,4.1)"
+Private-Package: \
+	org.bndtools.templating.engine.mustache,\
+	org.bndtools.templating.engine.st

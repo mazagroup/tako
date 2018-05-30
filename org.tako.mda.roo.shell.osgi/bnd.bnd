@@ -1,0 +1,9 @@
+-dsannotations-options: inherit
+-buildfeatures:
+-buildpath: \
+	org.tako.mda.roo.support;version=latest,\
+	org.tako.mda.roo.shell;version=latest
+Bundle-Version: 1.0.0.${tstamp}
+Export-Package: \
+	org.springframework.roo.shell.osgi,\
+	org.springframework.roo.shell.osgi.converters

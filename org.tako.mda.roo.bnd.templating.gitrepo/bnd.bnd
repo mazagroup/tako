@@ -1,0 +1,17 @@
+-buildpath: \
+	${bndlib},\
+	${aQute-repository},\
+	${aQute-resolve},\
+	org.apache.servicemix.bundles.jsch;version="[0.1.54,0.2)",\
+	org.eclipse.jgit;version="[5.0,5.1)",\
+	org.tako.wrapped.github-spullara-mustache;version="[0.8,1)",\
+	org.tako.mda.roo.bnd.templating;version=latest
+
+-privatepackage: org.bndtools.templating.jgit
+-includeresource: /=resources/unprocessed,\
+    {/=resources/processed}
+-conditionalpackage: aQute.lib.*, aQute.libg.*, org.bndtools.utils.*, org.eclipse.jgit.*, com.googlecode.javaewah
+
+Bundle-ActivationPolicy: lazy
+Bundle-SymbolicName: org.tako.mda.roo.bnd.templating.gitrepo; singleton:=true
+Bundle-Version: 1.0.0.${tstamp}

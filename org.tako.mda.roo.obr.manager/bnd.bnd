@@ -1,0 +1,14 @@
+-dsannotations-options: inherit
+-buildfeatures:
+-buildpath: \
+	${commonslib},\
+	org.apache.felix.bundlerepository;version="[2.0.8,2.1)",\
+	org.tako.mda.roo.support;version=latest,\
+	org.tako.mda.roo.model;version=latest,\
+	org.tako.mda.roo.metadata;version=latest,\
+	org.tako.mda.roo.shell;version=latest,\
+	org.tako.mda.roo.felix;version=latest
+Bundle-Version: 1.0.0.${tstamp}
+Export-Package: \
+	org.springframework.roo.obr.addon.search,\
+	org.springframework.roo.obr.addon.search.model

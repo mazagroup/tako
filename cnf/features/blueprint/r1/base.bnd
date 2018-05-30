@@ -1,0 +1,52 @@
+#
+# Amdatu Blueprint base feature
+#
+blueprint-feature.base: base
+blueprint-deps.base: \
+	org.apache.felix:org.apache.felix.dependencymanager.annotation:4.2.1,\
+	org.apache.felix:org.apache.felix.dependencymanager.runtime:4.0.5,\
+	org.apache.felix:org.apache.felix.dependencymanager:4.4.1,\
+	org.ops4j.pax.logging:pax-logging-api:${pax-logging-version},\
+	org.ops4j.pax.logging:pax-logging-service:${pax-logging-version},\
+	org.osgi:org.osgi.core:${osgi-core-version},\
+	org.osgi:osgi.cmpn:${osgi-cmpn-version},\
+	org.osgi:osgi.annotation:${osgi-annotation-version}
+
+blueprint-deps.test: \
+	org.mockito:mockito-core:${mockito-core-version},\
+	org.objenesis:objenesis:${objenesis-version},\
+	net.bytebuddy:byte-buddy-agent:${net-bytebuddy-version},\
+	net.bytebuddy:byte-buddy:${net-bytebuddy-version},\
+	org.apache.servicemix.bundles:org.apache.servicemix.bundles.junit:${servicemix-bundles-junit-version}
+
+#
+# Build
+#
+-buildpath.blueprint-base: \
+	${if;(buildfeaturesMerged[]=base); \
+		osgi.core,\
+		osgi.cmpn,\
+		osgi.annotation,\
+	}
+
+
+
+-testpath.blueprint-base: \
+	${if;(buildfeaturesMerged[]=base); \
+		org.apache.servicemix.bundles.junit,\
+		org.mockito.mockito-core,\
+		org.objenesis,\
+		net.bytebuddy.byte-buddy,\
+		net.bytebuddy.byte-buddy-agent,\
+	}
+
+#
+# Run
+#
+-runbundles.blueprint-base: \
+	${if;(runfeaturesMerged[]=base); \
+		org.apache.felix.dependencymanager.runtime,\
+		org.apache.felix.dependencymanager,\
+	}
+
+

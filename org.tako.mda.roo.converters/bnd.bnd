@@ -1,0 +1,13 @@
+-dsannotations-options: inherit
+-buildpath: \
+	${commonslib},\
+	org.apache.felix.bundlerepository;version="[2.0.8,2.1)",\
+	org.tako.mda.roo.support;version=latest,\
+	org.tako.mda.roo.shell;version=latest,\
+	org.tako.mda.roo.felix;version=latest,\
+	org.tako.mda.roo.project;version=latest,\
+	org.tako.mda.roo.model;version=latest,\
+	org.tako.mda.roo.process.manager;version=latest,\
+	org.tako.mda.roo.classpath;version=latest
+Bundle-Version: 1.0.0.${tstamp}
+Export-Package: org.springframework.roo.converters

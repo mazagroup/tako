@@ -1,0 +1,4 @@
+Export-Package: \
+	org.tako.jpa.demo.feed.api.model,\
+	org.tako.jpa.demo.feed.api.dao
+Bundle-Version: 1.0.0.${tstamp}

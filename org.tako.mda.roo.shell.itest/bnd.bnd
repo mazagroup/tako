@@ -1,0 +1,16 @@
+# Discover and run all test cases annotated with the @RunWith annotation
+Test-Cases: ${classes;CONCRETE;ANNOTATED;org.junit.runner.RunWith}
+
+-runfw: ${frameworklib}
+
+-buildfeatures: testing
+-runfeatures: base, testing
+
+-runproperties: \
+	org.ops4j.pax.logging.DefaultServiceLog.level=INFO
+-buildpath: org.tako.mda.roo.shell;version=latest
+-runbundles: \
+	org.tako.mda.roo.shell;version=latest,\
+	org.tako.mda.roo.support;version=latest
+-runee: JavaSE-1.8
+Private-Package: org.springframework.roo.shell.itest

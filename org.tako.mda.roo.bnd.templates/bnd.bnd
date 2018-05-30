@@ -1,0 +1,44 @@
+-dsannotations-options: inherit
+-includeresource: \=resources
+-buildpath: \
+	org.tako.mda.roo.support;version=latest,\
+	org.tako.mda.roo.model;version=latest,\
+	org.tako.mda.roo.metadata;version=latest,\
+	org.tako.mda.roo.file.monitor;version=latest,\
+	org.tako.mda.roo.file.undo;version=latest,\
+	org.tako.mda.roo.shell.osgi;version=latest,\
+	org.tako.mda.roo.shell;version=latest,\
+	org.tako.mda.roo.process.manager;version=latest
+Bundle-Version: 1.0.0.${tstamp}
+Private-Package: osgi.enroute.bndtools.templates,\
+	api,\
+	api.template,\
+	api. template.{{srcDir}}.{{basePackageDir}},\
+	api.template.{{testSrcDir}},\
+	ap plication,\
+	application.template,\
+	application.template.configuration,\
+	app lication.template.static.{{projectName}},\
+	application.template.static. {{projectName}}.main.htm,\
+	application.template.web,\
+	application.templat e.{{srcDir}}.{{basePackageDir}},\
+	application.template.{{testSrcDir}},\
+	e xample,\
+	example.template,\
+	example.template.{{srcDir}}.{{basePackageDir} }.api,\
+	example.template.{{srcDir}}.{{basePackageDir}}.command,\
+	example. template.{{srcDir}}.{{basePackageDir}}.provider,\
+	example.template.{{te stSrcDir}}.{{basePackageDir}}.provider,\
+	gogo,\
+	gogo.template,\
+	gogo.templa te.{{srcDir}}.{{basePackageDir}}.command,\
+	gogo.template.{{testSrcDir}} .{{basePackageDir}}.command,\
+	provider,\
+	provider.template,\
+	provider.templ ate.{{srcDir}}.{{basePackageDir}},\
+	provider.template.{{testSrcDir}}.{{ basePackageDir}},\
+	test,\
+	test.template,\
+	test.template.{{srcDir}}.{{basePa ckageDir}},\
+	test.template.{{testSrcDir}}
+Provide-Capability: org.bndtools.template;org.bndtools.template=project;name="API Bundle";category="OSGi enRoute";dir="api/template";icon="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAQCAMAAADH72RtAAAAolBMVEUAAAAAAAAAAAAAAADR0tQAAAAAAAD///////8AAAAAAAAAAAD///8AAADy8vPIycvGx8kAAAB0dXcAAAAAAAAAAAAAAAC5u73///8AAAD///8AAAD////IycthYmT7+/yIiYz29va5u73V1tesrrGfoaRFRUckJCXv7/De3+C1trmpq66TlZhvcHJjZGZVVlj4+fna29yYmp18fX91dnlUVVdUVt5GAAAAG3RSTlMA8KAg/uDQz3BgQDAfEP7968C1sJCCgH9XSjwueS2iAAAArklEQVQY003PVw6DQAwEUJb0Qnofb2EJPYTU+18tBiLEfFlPGlt2mnguBjOnmyEA0aUdjDFq4LVwllQl2bSyoFcWonjq4x9GjxJSXYGM5jVcyKAShTgZ1bLyUUkkgVBX0Fv2WQKF4Is77VlcyRIRcDMsgkXk3LK811huYeJMoci8SQGFjH0JlwVS+xbckoGOsHZ6AkgpLxFbX3+AA99yh7CaOKkS20n7yGk8njfTD/faFDILQR6ZAAAAAElFTkSuQmCC";help="api/help.xml";engine=mustache;metaType="OSGI-INF/metatype/osgi.enroute.bndtools.templates.api.xml",org.bndtools.template;org.bndtools.template=project;name="Provider/AdapterBundle";category="OSGienRoute";dir="provider/template";icon="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAQCAMAAADH72RtAAAAolBMVEUAAAAAAAAAAAAAAADR0tQAAAAAAAD///////8AAAAAAAAAAAD///8AAADy8vPIycvGx8kAAAB0dXcAAAAAAAAAAAAAAAC5u73///8AAAD///8AAAD////IycthYmT7+/yIiYz29va5u73V1tesrrGfoaRFRUckJCXv7/De3+C1trmpq66TlZhvcHJjZGZVVlj4+fna29yYmp18fX91dnlUVVdUVt5GAAAAG3RSTlMA8KAg/uDQz3BgQDAfEP7968C1sJCCgH9XSjwueS2iAAAArklEQVQY003PVw6DQAwEUJb0Qnofb2EJPYTU+18tBiLEfFlPGlt2mnguBjOnmyEA0aUdjDFq4LVwllQl2bSyoFcWonjq4x9GjxJSXYGM5jVcyKAShTgZ1bLyUUkkgVBX0Fv2WQKF4Is77VlcyRIRcDMsgkXk3LK811huYeJMoci8SQGFjH0JlwVS+xbckoGOsHZ6AkgpLxFbX3+AA99yh7CaOKkS20n7yGk8njfTD/faFDILQR6ZAAAAAElFTkSuQmCC";help="provider/help.xml";engine=mustache,org.bndtools.template;org.bndtools.template=project;name="TestBundle";category="OSGienRoute";dir="test/template";icon="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAQCAMAAADH72RtAAAAolBMVEUAAAAAAAAAAAAAAADR0tQAAAAAAAD///////8AAAAAAAAAAAD///8AAADy8vPIycvGx8kAAAB0dXcAAAAAAAAAAAAAAAC5u73///8AAAD///8AAAD////IycthYmT7+/yIiYz29va5u73V1tesrrGfoaRFRUckJCXv7/De3+C1trmpq66TlZhvcHJjZGZVVlj4+fna29yYmp18fX91dnlUVVdUVt5GAAAAG3RSTlMA8KAg/uDQz3BgQDAfEP7968C1sJCCgH9XSjwueS2iAAAArklEQVQY003PVw6DQAwEUJb0Qnofb2EJPYTU+18tBiLEfFlPGlt2mnguBjOnmyEA0aUdjDFq4LVwllQl2bSyoFcWonjq4x9GjxJSXYGM5jVcyKAShTgZ1bLyUUkkgVBX0Fv2WQKF4Is77VlcyRIRcDMsgkXk3LK811huYeJMoci8SQGFjH0JlwVS+xbckoGOsHZ6AkgpLxFbX3+AA99yh7CaOKkS20n7yGk8njfTD/faFDILQR6ZAAAAAElFTkSuQmCC";help="test/help.xml";engine=mustache,org.bndtools.template;org.bndtools.template=project;name="ApplicationBundle";category="OSGienRoute";dir="application/template";icon="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAQCAMAAADH72RtAAAAolBMVEUAAAAAAAAAAAAAAADR0tQAAAAAAAD///////8AAAAAAAAAAAD///8AAADy8vPIycvGx8kAAAB0dXcAAAAAAAAAAAAAAAC5u73///8AAAD///8AAAD////IycthYmT7+/yIiYz29va5u73V1tesrrGfoaRFRUckJCXv7/De3+C1trmpq66TlZhvcHJjZGZVVlj4+fna29yYmp18fX91dnlUVVdUVt5GAAAAG3RSTlMA8KAg/uDQz3BgQDAfEP7968C1sJCCgH9XSjwueS2iAAAArklEQVQY003PVw6DQAwEUJb0Qnofb2EJPYTU+18tBiLEfFlPGlt2mnguBjOnmyEA0aUdjDFq4LVwllQl2bSyoFcWonjq4x9GjxJSXYGM5jVcyKAShTgZ1bLyUUkkgVBX0Fv2WQKF4Is77VlcyRIRcDMsgkXk3LK811huYeJMoci8SQGFjH0JlwVS+xbckoGOsHZ6AkgpLxFbX3+AA99yh7CaOKkS20n7yGk8njfTD/faFDILQR6ZAAAAAElFTkSuQmCC";help="application/help.xml";engine=mustache;metaType="OSGI-INF/metatype/osgi.enroute.bndtools.templates.application.xml",org.bndtools.template;org.bndtools.template=project;name="ExamplewithAPI,providerandGogocommandBundle";category="OSGienRoute";dir="example/template";icon="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAQCAMAAADH72RtAAAAolBMVEUAAAAAAAAAAAAAAADR0tQAAAAAAAD///////8AAAAAAAAAAAD///8AAADy8vPIycvGx8kAAAB0dXcAAAAAAAAAAAAAAAC5u73///8AAAD///8AAAD////IycthYmT7+/yIiYz29va5u73V1tesrrGfoaRFRUckJCXv7/De3+C1trmpq66TlZhvcHJjZGZVVlj4+fna29yYmp18fX91dnlUVVdUVt5GAAAAG3RSTlMA8KAg/uDQz3BgQDAfEP7968C1sJCCgH9XSjwueS2iAAAArklEQVQY003PVw6DQAwEUJb0Qnofb2EJPYTU+18tBiLEfFlPGlt2mnguBjOnmyEA0aUdjDFq4LVwllQl2bSyoFcWonjq4x9GjxJSXYGM5jVcyKAShTgZ1bLyUUkkgVBX0Fv2WQKF4Is77VlcyRIRcDMsgkXk3LK811huYeJMoci8SQGFjH0JlwVS+xbckoGOsHZ6AkgpLxFbX3+AA99yh7CaOKkS20n7yGk8njfTD/faFDILQR6ZAAAAAElFTkSuQmCC";help="example/help.xml";engine=mustache,org.bndtools.template;org.bndtools.template=project;name="GogoCommandBundle";category="OSGienRoute";dir="gogo/template";icon="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAQCAMAAADH72RtAAAAolBMVEUAAAAAAAAAAAAAAADR0tQAAAAAAAD///////8AAAAAAAAAAAD///8AAADy8vPIycvGx8kAAAB0dXcAAAAAAAAAAAAAAAC5u73///8AAAD///8AAAD////IycthYmT7+/yIiYz29va5u73V1tesrrGfoaRFRUckJCXv7/De3+C1trmpq66TlZhvcHJjZGZVVlj4+fna29yYmp18fX91dnlUVVdUVt5GAAAAG3RSTlMA8KAg/uDQz3BgQDAfEP7968C1sJCCgH9XSjwueS2iAAAArklEQVQY003PVw6DQAwEUJb0Qnofb2EJPYTU+18tBiLEfFlPGlt2mnguBjOnmyEA0aUdjDFq4LVwllQl2bSyoFcWonjq4x9GjxJSXYGM5jVcyKAShTgZ1bLyUUkkgVBX0Fv2WQKF4Is77VlcyRIRcDMsgkXk3LK811huYeJMoci8SQGFjH0JlwVS+xbckoGOsHZ6AkgpLxFbX3+AA99yh7CaOKkS20n7yGk8njfTD/faFDILQR6ZAAAAAElFTkSuQmCC";help="gogo/help.xml";engine=mustache,org.bndtools.template;org.bndtools.template=project;name="ExamplewithAPI,providerandGogocommandBundle";category="OSGienRoute";dir="example/template";icon="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAQCAMAAADH72RtAAAAolBMVEUAAAAAAAAAAAAAAADR0tQAAAAAAAD///////8AAAAAAAAAAAD///8AAADy8vPIycvGx8kAAAB0dXcAAAAAAAAAAAAAAAC5u73///8AAAD///8AAAD////IycthYmT7+/yIiYz29va5u73V1tesrrGfoaRFRUckJCXv7/De3+C1trmpq66TlZhvcHJjZGZVVlj4+fna29yYmp18fX91dnlUVVdUVt5GAAAAG3RSTlMA8KAg/uDQz3BgQDAfEP7968C1sJCCgH9XSjwueS2iAAAArklEQVQY003PVw6DQAwEUJb0Qnofb2EJPYTU+18tBiLEfFlPGlt2mnguBjOnmyEA0aUdjDFq4LVwllQl2bSyoFcWonjq4x9GjxJSXYGM5jVcyKAShTgZ1bLyUUkkgVBX0Fv2WQKF4Is77VlcyRIRcDMsgkXk3LK811huYeJMoci8SQGFjH0JlwVS+xbckoGOsHZ6AkgpLxFbX3+AA99yh7CaOKkS20n7yGk8njfTD/faFDILQR6ZAAAAAElFTkSuQmCC";help="example/help.xml";engine=mustache

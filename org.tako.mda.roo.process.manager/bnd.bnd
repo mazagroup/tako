@@ -1,0 +1,15 @@
+-dsannotations-options: inherit
+-buildpath: \
+	${commonslib},\
+	org.tako.mda.roo.support;version=latest,\
+	org.tako.mda.roo.model;version=latest,\
+	org.tako.mda.roo.metadata;version=latest,\
+	org.tako.mda.roo.file.monitor;version=latest,\
+	org.tako.mda.roo.file.undo;version=latest,\
+	org.tako.mda.roo.shell.osgi;version=latest,\
+	org.tako.mda.roo.shell;version=latest
+Bundle-Version: 1.0.0.${tstamp}
+Export-Package: \
+	org.springframework.roo.process.manager,\
+	org.springframework.roo.process.manager.event
+Private-Package: org.springframework.roo.process.manager.internal

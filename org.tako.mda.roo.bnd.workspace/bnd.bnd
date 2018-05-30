@@ -1,0 +1,17 @@
+-dsannotations-options: inherit
+-includeresource: \=resources
+-buildpath: \
+	${commonslib},\
+	org.tako.mda.roo.support;version=latest,\
+	org.tako.mda.roo.model;version=latest,\
+	org.tako.mda.roo.metadata;version=latest,\
+	org.tako.mda.roo.file.monitor;version=latest,\
+	org.tako.mda.roo.file.undo;version=latest,\
+	org.tako.mda.roo.shell.osgi;version=latest,\
+	org.tako.mda.roo.shell;version=latest,\
+	org.tako.mda.roo.process.manager;version=latest
+Bundle-Version: 1.0.0.${tstamp}
+Export-Package: \
+	org.springframework.roo.bnd.workspace,\
+	org.springframework.roo.bnd.workspace.maven,\
+	org.springframework.roo.bnd.workspace.packaging

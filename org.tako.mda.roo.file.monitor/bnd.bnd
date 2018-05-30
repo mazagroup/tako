@@ -1,0 +1,11 @@
+-dsannotations-options: inherit
+-buildfeatures:
+-buildpath: \
+	${commonslib},\
+	org.tako.mda.roo.support;version=latest,\
+	org.tako.mda.roo.shell;version=latest
+Bundle-Version: 1.0.0.${tstamp}
+Export-Package: \
+	org.springframework.roo.file.monitor,\
+	org.springframework.roo.file.monitor.event,\
+	org.springframework.roo.file.monitor.polling

@@ -1,0 +1,10 @@
+-dsannotations-options: inherit
+-buildfeatures:
+-buildpath: \
+	org.tako.wrapped.json-simple;version="[1.1,1.2)",\
+	${commonslib},\
+	org.tako.mda.roo.support;version=latest,\
+	org.tako.mda.roo.shell;version=latest,\
+	org.tako.mda.roo.shell.jline;version=latest
+Bundle-Version: 1.0.0.${tstamp}
+Private-Package: org.springframework.roo.shell.jline.osgi

@@ -1,0 +1,6 @@
+-buildpath: \
+	${frameworklib},\
+	org.tako.mda.roo.support;version=latest,\
+	org.tako.mda.roo.shell;version=latest
+Bundle-Version: 1.0.0.${tstamp}
+Private-Package: org.springframework.roo.bootstrap

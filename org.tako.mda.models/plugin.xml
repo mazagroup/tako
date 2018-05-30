@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated accounting -->
+      <package
+            uri="http://www.eclipse.org/emf/texo/test/model/samples/accounting"
+            class="accounting.AccountingPackage"
+            genModel="texo_models/accounting.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated accounting -->
+      <parser
+            type="accounting"
+            class="accounting.util.AccountingResourceFactoryImpl"/>
+   </extension>
+
+</plugin>

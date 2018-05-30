@@ -1,0 +1,8 @@
+# Enable the base and config feature by default
+-buildfeatures.tako-default: base
+-runfeatures.tako-default: base
+
+-include: \
+	../features/tako/r1/base.bnd,\
+	../features/tako/r1/runtime.bnd,\
+	../features/tako/r1/testing.bnd

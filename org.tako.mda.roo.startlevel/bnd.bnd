@@ -1,0 +1,5 @@
+-dsannotations-options: inherit
+Bundle-Version: 1.0.0.${tstamp}
+Private-Package: org.springframework.roo.startlevel
+Bundle-Activator: org.springframework.roo.startlevel.Activator
+-buildpath: ${commonslib}

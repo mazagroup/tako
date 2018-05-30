@@ -1,0 +1,10 @@
+-dsannotations-options: inherit
+-includeresource: \=resources
+-buildfeatures:
+-buildpath: \
+	org.tako.wrapped.jline;version="[1.0.0,1.1)",\
+	${commonslib},\
+	org.tako.mda.roo.support;version=latest,\
+	org.tako.mda.roo.shell;version=latest
+Bundle-Version: 1.0.0.${tstamp}
+Export-Package: org.springframework.roo.shell.jline

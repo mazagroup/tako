@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://www.eclipse.org/emf/texo/test/model/samples/Employee"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:this="http://www.eclipse.org/emf/texo/test/model/samples/Employee"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="Employee">
+    <xsd:sequence>
+      <xsd:element name="name" type="xsd:string"/>
+      <xsd:element name="salary" type="xsd:int"/>
+      <xsd:element name="age" type="xsd:int"/>
+      <xsd:element name="hireDate" type="this:date"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Department">
+    <xsd:sequence>
+      <xsd:element name="name" type="xsd:string"/>
+      <xsd:element maxOccurs="unbounded" minOccurs="0"
+          name="employees" type="this:Employee">
+	  </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType> 
+ 
+	<xsd:simpleType ecore:instanceClass="java.util.Date" name="date">
+		<xsd:restriction base="xsd:dateTime"/>
+	</xsd:simpleType>
+</xsd:schema>

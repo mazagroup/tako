@@ -1,0 +1,44 @@
+#
+# Tako runtime feature
+#
+tako-feature.runtime: runtime
+tako-deps.runtime: \
+	org.apache.felix:org.apache.felix.scr:${felix-scr-version},\
+	org.slf4j:slf4j-api:${slf4j-version},\
+	org.slf4j:slf4j-jdk14:${slf4j-version},\
+	commons-codec:commons-codec:${commons-codec-version},\
+    commons-io:commons-io:${commons-io-version},\
+    org.apache.commons:commons-lang3:${commons-lang3-version},\
+    org.fusesource.jansi:jansi:${fusesource-jansi},\
+    org.jsoup:jsoup:${jsoup-version},\
+    org.apache.felix:org.apache.felix.bundlerepository:${felix-bundlerepository-version},\
+	org.apache.felix:org.apache.felix.configadmin:${felix-configadmin-version},\
+	org.apache.felix;org.apache.felix.coordinator:${felix-coordinator-version},\
+	org.apache.felix:org.apache.felix.eventadmin:${felix-eventadmin-version},\
+	org.apache.felix:org.apache.felix.gogo.command:${felix-gogo-command-version},\
+	org.apache.felix:org.apache.felix.gogo.runtime:${felix-gogo-runtime-version},\
+	org.apache.felix:org.apache.felix.log:${felix-log-version},\
+	org.apache.felix:org.apache.felix.framework:${felix-framework-version},\
+	org.apache.felix:org.apache.felix.metatype:${felix-metatype-version},\
+	org.apache.servicemix.bundles:org.apache.servicemix.bundles.freemarker:${servicemix-freemarker-version},\
+	org.apache.aries.subsystem:org.apache.aries.subsystem.api:${aries-subsystem-api-version},\
+	org.apache.aries.subsystem:org.apache.aries.subsystem.core:${aries-subsystem-core-version},\
+	org.apache.aries:org.apache.aries.util:${aries-util-version},\
+	org.eclipse.equinox:org.eclipse.equinox.region:${equinox-region-version},\
+	com.github.antlrjavaparser:antlr-java-parser:${antlr-java-parser-version}
+
+#
+# Run
+#
+-runbundles.tako-runtime: \
+	${if;(runfeaturesMerged[]=runtime); \
+		org.apache.felix.dependencymanager.runtime,\
+		org.apache.felix.dependencymanager,\
+		org.apache.felix.configadmin,\
+		org.apache.felix.eventadmin,\
+		org.apache.felix.metatype,\
+		org.ops4j.pax.logging.pax-logging-api,\
+		org.ops4j.pax.logging.pax-logging-service\
+	}
+
+

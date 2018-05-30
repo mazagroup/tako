@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated accounting -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="accounting.presentation.AccountingModelWizardID"
+            name="%_UI_AccountingModelWizard_label"
+            class="accounting.presentation.AccountingModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/AccountingModelFile.gif">
+         <description>%_UI_AccountingModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated accounting -->
+      <editor
+            id="accounting.presentation.AccountingEditorID"
+            name="%_UI_AccountingEditor_label"
+            icon="icons/full/obj16/AccountingModelFile.gif"
+            extensions="accounting"
+            class="accounting.presentation.AccountingEditor"
+            contributorClass="accounting.presentation.AccountingActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

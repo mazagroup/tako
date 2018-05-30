@@ -1,0 +1,13 @@
+#
+# Use this file to customize the bnd workspace
+#
+
+# Default build features (will be enabled for all projects in the workspace)
+-buildfeatures: base
+
+# Repository for project specific additional dependencies (using project-deps.maven )
+-plugin.ProjectDependencies: \
+  aQute.bnd.repository.maven.provider.MavenBndRepository; \
+        releaseUrl=https://repo.maven.apache.org/maven2/; \
+        index=${build}/project-deps.maven; \
+        name=Project dependencies

@@ -1,0 +1,54 @@
+commons-io-base:         2.4
+commons-io-ceiling:      3.0
+commons-codec-base:         1.8.0
+commons-codec-ceiling:      2.0.0
+commons-lang3-base:         3.1
+commons-lang3-ceiling:      3.2
+bnd-version-base:         4.0.0
+bnd-version-ceiling:      5.0.0
+osgi.annotation.version:  6.0.1
+osgi.core.version:        5.0.0
+osgi.cmpn.version:        5.0.0
+
+commonslib: \
+	org.apache.commons.lang3;version='[${commons-lang3-base},${commons-lang3-ceiling})';strategy=highest, \
+	org.apache.commons.io;version='[${commons-io-base},${commons-io-ceiling})';strategy=highest,\
+	org.apache.commons.codec;version='[${commons-codec-base},${commons-codec-ceiling})';strategy=highest
+
+
+# Version of bnd/bndlib to use consistently throughout the build
+# NB. this must be specified as full M.m.u version (but no qualifier)
+# On advice of Peter we use an up-to-major version range
+bndlib: aQute.libg;version='[${bnd-version-base},${bnd-version-ceiling})';strategy=highest, \
+	biz.aQute.bndlib;version='[${bnd-version-base},${bnd-version-ceiling})';strategy=highest
+
+# Version of the repository plugin to use consistently throughout the build
+# NB. this must be specified as full M.m.u version (but no qualifier)
+aQute-repository:         biz.aQute.repository;version='[${bnd-version-base},${bnd-version-ceiling})';strategy=highest
+aQute-resolve:            biz.aQute.resolve;version='[${bnd-version-base},${bnd-version-ceiling})';strategy=highest
+
+
+
+# Use this file to customize the bnd workspace
+#
+frameworklib: org.apache.felix.framework;version='[5, 6)';strategy=highest
+
+#Amdatu libs
+amdatutestlibs: org.amdatu.testing.configurator;version='[4.0.1,4.1)'
+
+#OSGi
+osgilibs: 	osgi.core;version=${osgi.core.version},\
+	osgi.cmpn;version=${osgi.cmpn.version},\
+	osgi.annotation;version=${osgi.annotation.version}
+
+# Default build features (will be enabled for all projects in the workspace)
+-buildfeatures: base
+
+# Repository for project specific additional dependencies (using project-deps.maven )
+#-plugin.ProjectDependencies: \
+#  aQute.bnd.repository.maven.provider.MavenBndRepository; \
+#        releaseUrl=https://repo.maven.apache.org/maven2/; \
+#        index=${build}/project-deps.maven; \
+#        name=Project dependencies
+
+

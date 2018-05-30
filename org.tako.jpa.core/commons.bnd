@@ -1,0 +1,6 @@
+Bundle-Version: 1.0.0.${tstamp}
+Export-Package: \
+	org.tako.jpa.core.commons.util.bean,\
+	org.tako.jpa.core.commons.util,\
+	org.tako.jpa.core.commons.util.jpa,\
+	org.tako.jpa.core.commons.util.io

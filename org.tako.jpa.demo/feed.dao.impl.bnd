@@ -1,0 +1,5 @@
+Bundle-Version: 1.0.0.${tstamp}
+Private-Package: \
+	org.tako.jpa.demo.feed.dao.impl,\
+	org.tako.jpa.demo.feed.dao.impl.osgi
+Bundle-Activator: org.tako.jpa.demo.feed.dao.impl.osgi.Activator

@@ -1,0 +1,6 @@
+Bundle-Version: 1.0.0.${tstamp}
+Meta-Persistence: META-INF/persistence.xml
+Include-Resource: META-INF/persistence.xml=resources/jpa/demo-content-persistence-openjpa.xml
+Private-Package: org.tako.jpa.demo.content.model.jpa.osgi
+Bundle-Activator: org.tako.jpa.demo.content.model.jpa.osgi.Activator
+Export-Package: org.tako.jpa.demo.content.model.jpa

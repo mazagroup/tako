@@ -1,0 +1,109 @@
+#
+# Tako base feature
+#
+tako-feature.base: base
+tako-deps.base: \
+	org.apache.felix:org.apache.felix.configadmin:${felix-configadmin-version},\
+	org.apache.felix:org.apache.felix.eventadmin:${felix-eventadmin-version},\
+	org.apache.felix:org.apache.felix.framework:${felix-framework-version},\
+	org.apache.felix:org.apache.felix.metatype:${felix-metatype-version},\
+	org.ops4j.pax.logging:pax-logging-api:${pax-logging-version},\
+	org.ops4j.pax.logging:pax-logging-service:${pax-logging-version},\
+	org.osgi:org.osgi.core:${osgi-core-version},\
+	org.osgi:osgi.cmpn:${osgi-cmpn-version},\
+	org.osgi:osgi.annotation:${osgi-annotation-version},\
+    org.apache.felix:org.apache.felix.scr:${felix-scr-version},\
+	org.slf4j:slf4j-api:${slf4j-version},\
+	commons-codec:commons-codec:${commons-codec-version},\
+    org.apache.commons:commons-lang3:${commons-lang3-version},\
+    commons-io:commons-io:${commons-io-version}
+
+tako-deps.test: \
+	org.mockito:mockito-core:${mockito-core-version},\
+	org.objenesis:objenesis:${objenesis-version},\
+	net.bytebuddy:byte-buddy-agent:${net-bytebuddy-version},\
+	net.bytebuddy:byte-buddy:${net-bytebuddy-version},\
+	org.apache.servicemix.bundles:org.apache.servicemix.bundles.junit:${servicemix-bundles-junit-version}
+
+#
+# Build
+#
+-buildpath.tako-base: \
+	${if;(buildfeaturesMerged[]=base); \
+		osgi.core,\
+		osgi.cmpn,\
+		osgi.annotation,\
+		org.apache.commons.lang3,\
+		org.apache.commons.io,\
+		org.apache.commons.codec\
+	}
+
+-testpath.tako-base: \
+	${if;(buildfeaturesMerged[]=base); \
+		org.apache.servicemix.bundles.junit,\
+		org.mockito.mockito-core,\
+		org.objenesis,\
+		net.bytebuddy.byte-buddy,\
+		net.bytebuddy.byte-buddy-agent\
+	}
+
+#
+# Run
+#
+-runbundles.tako-base: \
+	${if;(runfeaturesMerged[]=base); \
+		org.apache.felix.dependencymanager.runtime,\
+		org.apache.felix.dependencymanager,\
+		org.apache.felix.configadmin,\
+		org.apache.felix.eventadmin,\
+		org.apache.felix.metatype,\
+		org.ops4j.pax.logging.pax-logging-api,\
+		org.ops4j.pax.logging.pax-logging-service\
+	}
+
+tako-deps.test: \
+	org.mockito:mockito-core:2.13.0,\
+	org.objenesis:objenesis:2.6,\
+	net.bytebuddy:byte-buddy-agent:1.7.5,\
+	net.bytebuddy:byte-buddy:1.7.5,\
+	org.apache.servicemix.bundles:org.apache.servicemix.bundles.junit:4.12_1
+
+#
+# Build
+#
+-buildpath.tako-runtime: \
+	${if;(buildfeaturesMerged[]=runtime); \
+		org.apache.felix.dependencymanager,\
+		org.apache.felix.dependencymanager.annotation,\
+		org.osgi.service.cm,\
+		org.osgi.service.event,\
+		org.osgi.service.metatype,\
+		org.osgi.service.metatype.annotations,\
+		org.osgi.service.log,\
+		osgi.annotation,\
+		osgi.core,\
+		slf4j.api\
+	}
+
+-testpath.tako-runtime: \
+	${if;(buildfeaturesMerged[]=runtime); \
+		org.apache.servicemix.bundles.junit,\
+		org.mockito.mockito-core,\
+		org.objenesis,\
+		net.bytebuddy.byte-buddy,\
+		net.bytebuddy.byte-buddy-agent\
+	}
+
+#
+# Run
+#
+-runbundles.tako-runtime: \
+	${if;(runfeaturesMerged[]=runtime); \
+		org.apache.felix.dependencymanager.runtime,\
+		org.apache.felix.dependencymanager,\
+		org.apache.felix.configadmin,\
+		org.apache.felix.eventadmin,\
+		org.apache.felix.metatype,\
+		org.ops4j.pax.logging.pax-logging-api,\
+		org.ops4j.pax.logging.pax-logging-service\
+	}

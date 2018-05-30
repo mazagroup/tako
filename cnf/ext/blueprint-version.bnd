@@ -1,0 +1,8 @@
+# Enable the base and config feature by default
+-buildfeatures.blueprint-default: base
+-runfeatures.blueprint-default: base
+
+-include: \
+	../features/blueprint/r1/base.bnd,\
+	../features/blueprint/r1/takodeps.bnd,\
+	../features/blueprint/r1/testing.bnd

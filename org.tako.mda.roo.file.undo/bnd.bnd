@@ -1,0 +1,7 @@
+-dsannotations-options: inherit
+-buildfeatures:
+-buildpath: \
+	${commonslib},\
+	org.tako.mda.roo.support;version=latest
+Bundle-Version: 1.0.0.${tstamp}
+Export-Package: org.springframework.roo.file.undo
