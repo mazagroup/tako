@@ -16,6 +16,7 @@ blueprint-repo.takodeps: http://tako-repo.s3-website-us-east-1.amazonaws.com/tak
 		org.apache.felix.scr,\
 		slf4j.api,\
 		slf4j.jdk14,\
+		com.google.guava,\
 		org.apache.commons.codec,\
 		org.apache.commons.io,\
 		org.apache.commons.lang3,\
@@ -47,14 +48,15 @@ blueprint-repo.takodeps: http://tako-repo.s3-website-us-east-1.amazonaws.com/tak
 		aQute.libg,\
 		biz.aQute.repository,\
 		biz.aQute.resolve,\
-		org.apache.felix.scr,\
 		slf4j.api,\
 		slf4j.jdk14,\
+		com.google.guava,\
 		org.apache.commons.codec,\
 		org.apache.commons.io,\
 		org.apache.commons.lang3,\
 		org.fusesource.jansi,\
 		org.jsoup,\
+		org.apache.felix.scr,\
 		org.apache.felix.bundlerepository,\
 		org.apache.felix.configadmin,\
 		org.apache.felix.coordinator,\

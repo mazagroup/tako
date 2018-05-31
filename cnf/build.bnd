@@ -6,9 +6,23 @@ commons-lang3-base:         3.1
 commons-lang3-ceiling:      3.2
 bnd-version-base:         4.0.0
 bnd-version-ceiling:      5.0.0
+felix-scr-version-base:         2.0.14
+felix-scr-version-ceiling:      2.1
+felix-log-version-base:    1.0.1
+felix-log-version-ceiling: 1.1
+felix-configadmin-version-base: 1.8.0
+felix-configadmin-version-ceiling: 2.0
+felix-metatype-version-base: 1.1.2
+felix-metatype-version-ceiling: 1.2
+logging-version-base: 1.7.21
+logging-version-ceiling: 1.8
+dm-runtime-version-base: 4.0.4
+dm-runtime-version-ceiling: 4.1
+dm-version-base: 4.4.1
+dm-version-ceiling: 4.5
 osgi.annotation.version:  6.0.1
-osgi.core.version:        5.0.0
-osgi.cmpn.version:        5.0.0
+osgi.core.version:        6.0.0
+osgi.cmpn.version:        6.0.0
 
 commonslib: \
 	org.apache.commons.lang3;version='[${commons-lang3-base},${commons-lang3-ceiling})';strategy=highest, \
@@ -40,6 +54,21 @@ amdatutestlibs: org.amdatu.testing.configurator;version='[4.0.1,4.1)'
 osgilibs: 	osgi.core;version=${osgi.core.version},\
 	osgi.cmpn;version=${osgi.cmpn.version},\
 	osgi.annotation;version=${osgi.annotation.version}
+
+#Felix
+felixlibs: org.apache.felix.scr;version='[${felix-scr-version-base},${felix-scr-version-ceiling})';strategy=highest,\
+	org.apache.felix.log;version='[${felix-log-version-base},${felix-log-version-ceiling})';strategy=highest,\
+	org.apache.felix.configadmin;version='[${felix-configadmin-version-base},${felix-configadmin-version-ceiling})';strategy=highest,\
+	org.apache.felix.metatype;version='[${felix-metatype-version-base},${felix-metatype-version-ceiling})';strategy=highest
+
+
+#OSGi log
+loglibs: slf4j.api;version='[${logging-version-base},${logging-version-ceiling})';strategy=highest,\
+	slf4j.jdk14;version='[${logging-version-base},${logging-version-ceiling})';strategy=highest
+
+#DM
+dmlibs: org.apache.felix.dependencymanager.runtime;version='[${dm-runtime-version-base},${dm-runtime-version-ceiling})';strategy=highest,\
+	org.apache.felix.dependencymanager;version='[${dm-version-base},${dm-version-ceiling})';strategy=highest
 
 # Default build features (will be enabled for all projects in the workspace)
 -buildfeatures: base

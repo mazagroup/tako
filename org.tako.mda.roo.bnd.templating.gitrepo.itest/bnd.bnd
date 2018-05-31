@@ -1,7 +1,7 @@
 	# Discover and run all test cases annotated with the @RunWith annotation
 Test-Cases: ${classes;CONCRETE;ANNOTATED;org.junit.runner.RunWith}
 
--runfw: ${frameworklib}
+-runfw: org.apache.felix.framework;version='[5.4.0,5.4.0]'
 
 -buildfeatures: testing
 -runfeatures: base, testing
@@ -13,5 +13,11 @@ Private-Package: org.tako.mda.roo.bnd.templating.gitrepo.itest
 	org.tako.mda.roo.bnd.templating;version=latest,\
 	org.apache.felix.dependencymanager;version=4.4
 -runbundles: \
+	${dmlibs},\
+	${loglibs},\
+	${felixlibs},\
+	${bndlib},\
+	${amdatutestlibs},\
+	com.google.guava;version='[16.0,17.0)',\
 	org.tako.mda.roo.bnd.templating;version=latest
 -runee: JavaSE-1.8
