@@ -21,7 +21,7 @@ public class FindTemplatesTest {
     public void before() {
         TestConfigurator.configure(this)
             // Configure your test here
-        	.add(createServiceDependency().setService(TemplateLoader.class))
+        	.add(createServiceDependency().setService(TemplateLoader.class).setRequired(true))
             .apply();
     }
 
