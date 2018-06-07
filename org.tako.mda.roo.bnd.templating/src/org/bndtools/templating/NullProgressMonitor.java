@@ -1,5 +1,7 @@
 package org.bndtools.templating;
 
+import org.springframework.roo.support.runtime.IProgressMonitor;
+
 public class NullProgressMonitor implements IProgressMonitor {
 
 	@Override

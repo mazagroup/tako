@@ -16,13 +16,13 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Properties;
 
-import org.bndtools.templating.IProgressMonitor;
 import org.bndtools.templating.Resource;
 import org.bndtools.templating.ResourceMap;
 import org.bndtools.templating.ResourceType;
 import org.bndtools.templating.StringResource;
 import org.bndtools.templating.TemplateEngine;
 import org.osgi.service.component.annotations.Component;
+import org.springframework.roo.support.runtime.IProgressMonitor;
 import org.stringtemplate.v4.AutoIndentWriter;
 import org.stringtemplate.v4.InstanceScope;
 import org.stringtemplate.v4.Interpreter;

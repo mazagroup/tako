@@ -1,0 +1,357 @@
+package org.springframework.roo.bnd.workspace;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.logging.Logger;
+
+import org.apache.commons.lang3.Validate;
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.InvalidSyntaxException;
+import org.osgi.framework.ServiceReference;
+import org.osgi.service.component.ComponentContext;
+import org.osgi.service.component.annotations.Activate;
+import org.osgi.service.component.annotations.Component;
+import org.springframework.roo.bnd.workspace.packaging.JarPackaging;
+import org.springframework.roo.bnd.workspace.packaging.PackagingProvider;
+import org.springframework.roo.model.JavaPackage;
+import org.springframework.roo.process.manager.ProcessManager;
+import org.springframework.roo.shell.CliAvailabilityIndicator;
+import org.springframework.roo.shell.CliCommand;
+import org.springframework.roo.shell.CliOption;
+import org.springframework.roo.shell.CliOptionAutocompleteIndicator;
+import org.springframework.roo.shell.CliOptionVisibilityIndicator;
+import org.springframework.roo.shell.CommandMarker;
+import org.springframework.roo.shell.Shell;
+import org.springframework.roo.shell.ShellContext;
+import org.springframework.roo.support.logging.HandlerUtils;
+
+/**
+ * Commands related to file system monitoring and process management.
+ *
+ * @author Ben Alex
+ * @author Juan Carlos García
+ * @since 1.1
+ */
+@Component(service = CommandMarker.class)
+public class WorkspaceCommands implements CommandMarker {
+
+  private static final String DEVELOPMENT_MODE_COMMAND = "addon development mode";
+  private static final String PROJECT_SETUP_COMMAND = "project setup";
+  private static final String PROJECT_SCAN_SPEED_COMMAND = "project scan speed";
+  private static final String PROJECT_SCAN_STATUS_COMMAND = "project scan status";
+  private static final String PROJECT_SCAN_NOW_COMMAND = "project scan now";
+
+  private static final String WORKSPACE_SETUP_COMMAND = "workspace setup";
+
+  protected final static Logger LOGGER = HandlerUtils.getLogger(WorkspaceCommands.class);
+
+  // ------------ OSGi component attributes ----------------
+  private BundleContext context;
+
+  private ProcessManager processManager;
+  private Shell shell;
+  private ProjectOperations projectOperations;
+  private MavenOperations mavenOperations;
+  private BndOperations bndOperations;
+
+  @Activate
+  protected void activate(final ComponentContext context) {
+    this.context = context.getBundleContext();
+  }
+
+  @CliAvailabilityIndicator(PROJECT_SETUP_COMMAND)
+  public boolean isCreateProjectAvailable() {
+
+    return getMavenOperations().isCreateProjectAvailable();
+  }
+
+  @CliOptionVisibilityIndicator(command = PROJECT_SETUP_COMMAND, params = {"packaging"},
+      help = "Packaging parameter is not available if multimodule is specified.")
+  public boolean isPackagingVisible(ShellContext shellContext) {
+
+    // Getting all defined parameters
+    Map<String, String> params = shellContext.getParameters();
+
+    // If multimodule is enabled, packaging parameter should not
+    // be visible
+    String multimodule = params.get("multimodule");
+
+    if (multimodule == null) {
+      return true;
+    }
+
+    return false;
+  }
+
+  @CliOptionAutocompleteIndicator(param = "java", command = PROJECT_SETUP_COMMAND,
+      help = "Java version 6, 7 and 8 available.")
+  public List<String> getJavaVersions(ShellContext context) {
+    List<String> javaVersions = new ArrayList<String>();
+    javaVersions.add("6");
+    javaVersions.add("7");
+    javaVersions.add("8");
+    return javaVersions;
+  }
+
+  //----------------------- WORKSPACE_SETUP_ -----------------------------------------------
+	@CliCommand(value = WORKSPACE_SETUP_COMMAND, help = "Creates a new BND workspace.")
+	public void createWorkspace(
+			@CliOption(
+					key = "workspaceName",
+					mandatory = false,
+					specifiedDefaultValue = "cnf",
+					help = "The name of the workspace"
+							+ "Default if option not present: `cnf` is used.")
+			final String workspaceName,
+			@CliOption(
+					key = "template",
+					mandatory = false,
+					specifiedDefaultValue = "osgi/enroute.workspace",
+					help = "Option of workspace template. "
+					+ "Possible values are: `osgi/enroute.workspace` and "
+					+ "`bndtools/workspace`. "
+					+ "Default if option present: `osgi/enroute.workspace`")
+			final String template,
+			@CliOption(key = "java", help = "Forces a particular major version of Java to be used. "
+					+ "Default if option not present: Java 8 inherited from Spring Boot.")
+			final Integer majorJavaVersion) {
+
+		getBndOperations().createWorkspaceFromGitTemplate(workspaceName,template,majorJavaVersion);
+	}
+
+
+  //----------------------- RROJECT_SETUP_ -------------------------------------------------
+  @CliCommand(value = PROJECT_SETUP_COMMAND, help = "Creates a new Maven project.")
+  public void createProject(
+      @CliOption(
+          key = {"topLevelPackage"},
+          mandatory = true,
+          optionContext = "update",
+          help = "The uppermost package name (this becomes the `<groupId>` in Maven and also the `~` value "
+              + "when using Roo Shell).") final JavaPackage topLevelPackage,
+      @CliOption(key = "projectName",
+          help = "The name of the project (this becomes the `<artifactId>` in Maven). "
+              + "Default if option not present: last segment of `--topLevelPackage` name used.") final String projectName,
+      @CliOption(
+          key = "multimodule",
+          mandatory = false,
+          specifiedDefaultValue = "STANDARD",
+          help = "Option to use a multimodule architecture. "
+              + "Possible values are: `BASIC` (root module with child 'application' module), and "
+              + "`STANDARD` (root module with children modules: 'application', 'model', 'repository', "
+              + "'service-api', 'service-impl' and 'integration'). "
+              + "Default if option present: `STANDARD`") final Multimodule multimodule,
+      @CliOption(key = "java", help = "Forces a particular major version of Java to be used. "
+          + "Default if option not present: Java 6 inherited from Spring Boot.") final Integer majorJavaVersion,
+      @CliOption(key = "packaging", help = "The Maven packaging of this project."
+          + "This option is not available if 'multimodule' is specified. "
+          + "Default if option not present: 'jar'.", unspecifiedDefaultValue = JarPackaging.NAME) final PackagingProvider packaging) {
+
+    if (multimodule != null) {
+      getMavenOperations().createMultimoduleProject(topLevelPackage, projectName, majorJavaVersion,
+          multimodule);
+    } else {
+      getMavenOperations().createProject(topLevelPackage, projectName, majorJavaVersion, packaging);
+    }
+  }
+
+  @CliAvailabilityIndicator({PROJECT_SCAN_SPEED_COMMAND, PROJECT_SCAN_STATUS_COMMAND,
+      PROJECT_SCAN_NOW_COMMAND})
+  public boolean isProjecScanAvailable() {
+    return getProjectOperations().isFocusedProjectAvailable();
+  }
+
+  @CliCommand(
+      value = DEVELOPMENT_MODE_COMMAND,
+      help = "Switches the system into development mode, which enables add-on development commands and "
+          + "shows greater diagnostic information.")
+  public String developmentMode(@CliOption(key = {"enabled"}, mandatory = false,
+      specifiedDefaultValue = "true", unspecifiedDefaultValue = "true",
+      help = "Activates development mode") final boolean enabled) {
+
+    if (processManager == null) {
+      processManager = getProcessManager();
+    }
+
+    Validate.notNull(processManager, "ProcessManager is required");
+
+    if (shell == null) {
+      shell = getShell();
+    }
+
+    Validate.notNull(shell, "Shell is required");
+
+    processManager.setDevelopmentMode(enabled);
+    shell.setDevelopmentMode(enabled);
+    return "Development mode set to " + enabled;
+  }
+
+  @CliCommand(
+      value = PROJECT_SCAN_NOW_COMMAND,
+      help = "Performs a manual file system scan, calling thread monitors and checking that all files "
+          + "are updated.")
+  public String scan() {
+    if (processManager == null) {
+      processManager = getProcessManager();
+    }
+
+    Validate.notNull(processManager, "ProcessManager is required");
+
+    final long originalSetting = processManager.getMinimumDelayBetweenScan();
+    try {
+      processManager.setMinimumDelayBetweenScan(1);
+      processManager.timerBasedScan();
+    } finally {
+      // Switch on manual scan again
+      processManager.setMinimumDelayBetweenScan(originalSetting);
+    }
+    return "Manual scan completed";
+  }
+
+  @CliCommand(value = PROJECT_SCAN_STATUS_COMMAND,
+      help = "Displays file system scanning information such as the time lasted for last scan "
+          + "and scanning frequency.")
+  public String scanningInfo() {
+    if (processManager == null) {
+      processManager = getProcessManager();
+    }
+
+    Validate.notNull(processManager, "ProcessManager is required");
+
+    final StringBuilder sb = new StringBuilder("File system scanning ");
+    final long duration = processManager.getLastScanDuration();
+    if (duration == 0) {
+      sb.append("never executed; ");
+    } else {
+      sb.append("last took ").append(duration).append(" ms; ");
+    }
+    final long minimum = processManager.getMinimumDelayBetweenScan();
+    if (minimum == 0) {
+      sb.append("automatic scanning is disabled");
+    } else if (minimum < 0) {
+      sb.append("auto-scaled scanning is enabled");
+    } else {
+      sb.append("scanning frequency has a minimum interval of ").append(minimum).append(" ms");
+    }
+    return sb.toString();
+  }
+
+  @CliCommand(value = PROJECT_SCAN_SPEED_COMMAND,
+      help = "Changes the time inteval between file system scans.")
+  public String scanningSpeed(@CliOption(key = {"", "ms"}, mandatory = true,
+      help = "The number of milliseconds between each scan") final long minimumDelayBetweenScan) {
+    if (processManager == null) {
+      processManager = getProcessManager();
+    }
+
+    Validate.notNull(processManager, "ProcessManager is required");
+
+    processManager.setMinimumDelayBetweenScan(minimumDelayBetweenScan);
+    return scanningInfo();
+  }
+
+  public ProcessManager getProcessManager() {
+    // Get all components implement ProcessManager interface
+    try {
+      ServiceReference<?>[] references =
+          this.context.getAllServiceReferences(ProcessManager.class.getName(), null);
+
+      for (ServiceReference<?> ref : references) {
+        return (ProcessManager) this.context.getService(ref);
+      }
+
+      return null;
+
+    } catch (InvalidSyntaxException e) {
+      LOGGER.warning("Cannot load ProcessManager on ProcessManagerCommands.");
+      return null;
+    }
+  }
+
+  public Shell getShell() {
+    // Get all Shell implement Shell interface
+    try {
+      ServiceReference<?>[] references =
+          this.context.getAllServiceReferences(Shell.class.getName(), null);
+
+      for (ServiceReference<?> ref : references) {
+        return (Shell) this.context.getService(ref);
+      }
+
+      return null;
+
+    } catch (InvalidSyntaxException e) {
+      LOGGER.warning("Cannot load Shell on ProcessManagerCommands.");
+      return null;
+    }
+  }
+
+  public ProjectOperations getProjectOperations() {
+    if (projectOperations == null) {
+      // Get all Services implement ProjectOperations interface
+      try {
+        ServiceReference<?>[] references =
+            this.context.getAllServiceReferences(ProjectOperations.class.getName(), null);
+
+        for (ServiceReference<?> ref : references) {
+          return (ProjectOperations) this.context.getService(ref);
+        }
+
+        return null;
+
+      } catch (InvalidSyntaxException e) {
+        LOGGER.warning("Cannot load ProjectOperations on ProcessManagerCommands.");
+        return null;
+      }
+    } else {
+      return projectOperations;
+    }
+  }
+
+  public MavenOperations getMavenOperations() {
+    if (mavenOperations == null) {
+      // Get all Services implement MavenOperations interface
+      try {
+        ServiceReference<?>[] references =
+            this.context.getAllServiceReferences(MavenOperations.class.getName(), null);
+
+        for (ServiceReference<?> ref : references) {
+          return (MavenOperations) this.context.getService(ref);
+        }
+
+        return null;
+
+      } catch (InvalidSyntaxException e) {
+        LOGGER.warning("Cannot load MavenOperations on MavenCommands.");
+        return null;
+      }
+    } else {
+      return mavenOperations;
+    }
+
+  }
+
+  public BndOperations getBndOperations() {
+	    if (bndOperations == null) {
+	      // Get all Services implement BndOperations interface
+	      try {
+	        ServiceReference<?>[] references =
+	            this.context.getAllServiceReferences(BndOperations.class.getName(), null);
+
+	        for (ServiceReference<?> ref : references) {
+	          return (BndOperations) this.context.getService(ref);
+	        }
+
+	        return null;
+
+	      } catch (InvalidSyntaxException e) {
+	        LOGGER.warning("Cannot load BndOperations on WorkspaceCommands.");
+	        return null;
+	      }
+	    } else {
+	      return bndOperations;
+	    }
+
+	  }
+}

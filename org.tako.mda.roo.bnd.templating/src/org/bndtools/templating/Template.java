@@ -8,6 +8,7 @@ import java.util.Map;
 import org.osgi.annotation.versioning.ProviderType;
 import org.osgi.framework.Version;
 import org.osgi.service.metatype.ObjectClassDefinition;
+import org.springframework.roo.support.runtime.IProgressMonitor;
 
 @ProviderType
 public interface Template extends Closeable {

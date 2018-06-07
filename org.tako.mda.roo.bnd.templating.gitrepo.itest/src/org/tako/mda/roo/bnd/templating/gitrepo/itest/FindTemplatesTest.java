@@ -2,7 +2,11 @@ package org.tako.mda.roo.bnd.templating.gitrepo.itest;
 
 import static org.junit.Assert.fail;
 
+import java.lang.reflect.InvocationTargetException;
+import java.util.Collection;
+
 import org.amdatu.testing.configurator.TestConfigurator;
+import org.bndtools.templating.Template;
 import org.bndtools.templating.TemplateLoader;
 
 import static org.amdatu.testing.configurator.TestConfigurator.createServiceDependency;
@@ -11,6 +15,9 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import org.osgi.util.promise.Promise;
+
+import aQute.libg.reporter.ReporterAdapter;
 
 @RunWith(JUnit4.class)
 public class FindTemplatesTest {
@@ -31,9 +38,11 @@ public class FindTemplatesTest {
     }
 
     @Test
-    public void test() {
+    public void testFindWorkspaceTemplates() throws InvocationTargetException, InterruptedException {
     	org.junit.Assert.assertNotNull(templateLoader);
         //fail("Not implemented yet");
+    	Promise<? extends Collection<Template>> res = templateLoader.findTemplates("workspace", new ReporterAdapter());
+    	org.junit.Assert.assertEquals(2, res.getValue().size());
     }
 
 }

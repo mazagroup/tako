@@ -3,6 +3,8 @@ package org.bndtools.templating;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.roo.support.runtime.IProgressMonitor;
+
 
 public interface TemplateEngine {
 

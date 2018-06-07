@@ -72,4 +72,15 @@ blueprint-repo.takodeps: http://tako-repo.s3-website-us-east-1.amazonaws.com/tak
 		org.apache.aries.util,\
 		org.eclipse.equinox.region,\
 		com.github.antlrjavaparser.antlr-java-parser,\
+		org.apache.servicemix.bundles.jsch,\
+		org.eclipse.jgit,\
+		org.tako.wrapped.github-spullara-mustache,\
+		org.tako.wrapped.bcpg-jdk15,\
+		org.tako.wrapped.bcprov-jdk15,\
+		org.tako.wrapped.jline,\
+		org.tako.wrapped.json-simple,\
+		org.tako.wrapped.antlr4-runtime,\
+		org.tako.wrapped.antlr-ST4-4.0.8,\
+		org.tako.wrapped.github-spullara-mustache,\
+		org.tako.wrapped.inflector,\
 	}

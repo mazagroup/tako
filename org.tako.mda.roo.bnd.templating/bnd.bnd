@@ -19,7 +19,8 @@ Export-Package: \
 	${bndlib},\
 	com.google.guava;version='[16.0,17.0)',\
 	org.tako.wrapped.github-spullara-mustache;version='[0.8,1)',\
-	org.tako.wrapped.antlr-ST4-4.0.8;version='[4.0,4.1)'
+	org.tako.wrapped.antlr-ST4-4.0.8;version='[4.0,4.1)',\
+	org.tako.mda.roo.support;version=latest
 Private-Package: \
 	org.bndtools.templating.engine.mustache,\
 	org.bndtools.templating.engine.st

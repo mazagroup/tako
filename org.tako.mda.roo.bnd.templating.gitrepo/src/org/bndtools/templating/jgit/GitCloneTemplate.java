@@ -11,7 +11,6 @@ import java.util.regex.Pattern;
 
 import org.bndtools.templating.FileResource;
 import org.bndtools.templating.FolderResource;
-import org.bndtools.templating.IProgressMonitor;
 import org.bndtools.templating.LoggerProgressMonitor;
 import org.bndtools.templating.NullProgressMonitor;
 import org.bndtools.templating.ResourceMap;
@@ -29,6 +28,7 @@ import org.eclipse.jgit.lib.Ref;
 import org.eclipse.jgit.lib.Repository;
 import org.osgi.framework.Version;
 import org.osgi.service.metatype.ObjectClassDefinition;
+import org.springframework.roo.support.runtime.IProgressMonitor;
 
 import aQute.lib.io.IO;
 

@@ -1,3 +1,10 @@
+# Master Version Settings
+# base-version           = a valid major.minor.micro version
+# base-version-qualifier = DEV|Mx|RCx|REL, with x a number
+base-version:             4.0.0
+base-version-qualifier:   DEV
+
+#Version vars
 commons-io-base:         2.4
 commons-io-ceiling:      3.0
 commons-codec-base:         1.8.0

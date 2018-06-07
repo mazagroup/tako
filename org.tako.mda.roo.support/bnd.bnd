@@ -6,4 +6,6 @@ Export-Package: \
 	org.springframework.roo.support.api,\
 	org.springframework.roo.support.logging,\
 	org.springframework.roo.support.osgi,\
-	org.springframework.roo.support.util
+	org.springframework.roo.support.util,\
+	org.springframework.roo.support.operation,\
+	org.springframework.roo.support.runtime

@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+Embedded-Runpath: jar/biz.aQute.launcher-3.5.0.jar
+Main-Class: aQute.launcher.pre.EmbeddedLauncher

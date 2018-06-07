@@ -16,31 +16,31 @@ mkdir -p "$ROO_HOME"/lib/deps
 # Most Roo bundles are not special and belong in "bundle"
 # Copy Addon bundles
 # Copy Runtime Bundles
-cp "$ROO_CNF_HOME"/localrepo/org.apache.felix.scr/org.apache.felix.scr-2.0.14.jar "$ROO_HOME"/lib/deps
-cp "$ROO_CNF_HOME"/localrepo/slf4j.api/slf4j.api-1.7.21.jar "$ROO_HOME"/lib/deps
-cp "$ROO_CNF_HOME"/localrepo/slf4j.jdk14/slf4j.jdk14-1.7.21.jar "$ROO_HOME"/lib/deps
-cp "$ROO_CNF_HOME"/localrepo/org.apache.commons.codec/org.apache.commons.codec-1.8.0.jar "$ROO_HOME"/lib/deps
-cp "$ROO_CNF_HOME"/localrepo/org.apache.commons.io/org.apache.commons.io-2.4.0.jar "$ROO_HOME"/lib/deps
-cp "$ROO_CNF_HOME"/localrepo/org.apache.commons.lang3/org.apache.commons.lang3-3.1.0.jar "$ROO_HOME"/lib/deps
-cp "$ROO_CNF_HOME"/localrepo/org.fusesource.jansi/org.fusesource.jansi-1.6.0.jar "$ROO_HOME"/lib/deps
-cp "$ROO_CNF_HOME"/localrepo/org.jsoup/org.jsoup-1.9.1.jar "$ROO_HOME"/lib/deps
-cp "$ROO_CNF_HOME"/localrepo/org.apache.felix.bundlerepository/org.apache.felix.bundlerepository-2.0.8.jar "$ROO_HOME"/lib/deps
-cp "$ROO_CNF_HOME"/localrepo/org.apache.felix.configadmin/org.apache.felix.configadmin-1.8.10.jar "$ROO_HOME"/lib/deps
-cp "$ROO_CNF_HOME"/localrepo/org.apache.felix.coordinator/org.apache.felix.coordinator-1.0.0.jar "$ROO_HOME"/lib/deps
-cp "$ROO_CNF_HOME"/localrepo/org.apache.felix.eventadmin/org.apache.felix.eventadmin-1.4.8.jar "$ROO_HOME"/lib/deps
-cp "$ROO_CNF_HOME"/localrepo/org.apache.felix.gogo.command/org.apache.felix.gogo.command-0.16.0.jar "$ROO_HOME"/lib/deps
-cp "$ROO_CNF_HOME"/localrepo/org.apache.felix.gogo.runtime/org.apache.felix.gogo.runtime-0.16.2.jar "$ROO_HOME"/lib/deps
-cp "$ROO_CNF_HOME"/localrepo/org.apache.felix.log/org.apache.felix.log-1.0.1.jar "$ROO_HOME"/lib/deps
-cp "$ROO_CNF_HOME"/localrepo/org.apache.felix.metatype/org.apache.felix.metatype-1.1.2.jar "$ROO_HOME"/lib/deps
-cp "$ROO_CNF_HOME"/localrepo/org.apache.servicemix.bundles.freemarker/org.apache.servicemix.bundles.freemarker-2.3.23.jar "$ROO_HOME"/lib/deps
-cp "$ROO_CNF_HOME"/localrepo/org.apache.aries.subsystem.api/org.apache.aries.subsystem.api-2.0.8.jar "$ROO_HOME"/lib/deps
-cp "$ROO_CNF_HOME"/localrepo/org.apache.aries.util/org.apache.aries.util-1.1.1.jar "$ROO_HOME"/lib/deps
-cp "$ROO_CNF_HOME"/localrepo/org.apache.aries.subsystem.core/org.apache.aries.subsystem.core-2.0.8.jar "$ROO_HOME"/lib/deps
-cp "$ROO_CNF_HOME"/localrepo/org.eclipse.equinox.region/org.eclipse.equinox.region-1.1.0.jar "$ROO_HOME"/lib/deps
-cp "$ROO_CNF_HOME"/localrepo/com.github.antlrjavaparser.antlr-java-parser/com.github.antlrjavaparser.antlr-java-parser-1.0.15.jar "$ROO_HOME"/lib/deps
+cp "$ROO_CNF_HOME"/cache/3.5.0/Amdatu Blueprint OSGi/org.apache.felix.scr-2.0.14.jar "$ROO_HOME"/lib/deps
+cp "$ROO_CNF_HOME"/cache/3.5.0/Amdatu Blueprint OSGi/slf4j.api-1.7.21.jar "$ROO_HOME"/lib/deps
+cp "$ROO_CNF_HOME"/cache/3.5.0/Amdatu Blueprint OSGi/slf4j.jdk14-1.7.21.jar "$ROO_HOME"/lib/deps
+cp "$ROO_CNF_HOME"/cache/3.5.0/Amdatu Blueprint OSGi/org.apache.commons.codec-1.8.0.jar "$ROO_HOME"/lib/deps
+cp "$ROO_CNF_HOME"/cache/3.5.0/Amdatu Blueprint OSGi/org.apache.commons.io-2.4.0.jar "$ROO_HOME"/lib/deps
+cp "$ROO_CNF_HOME"/cache/3.5.0/Amdatu Blueprint OSGi/org.apache.commons.lang3-3.1.0.jar "$ROO_HOME"/lib/deps
+cp "$ROO_CNF_HOME"/cache/3.5.0/Amdatu Blueprint OSGi/org.fusesource.jansi-1.6.0.jar "$ROO_HOME"/lib/deps
+cp "$ROO_CNF_HOME"/cache/3.5.0/Amdatu Blueprint OSGi/org.jsoup-1.9.1.jar "$ROO_HOME"/lib/deps
+cp "$ROO_CNF_HOME"/cache/3.5.0/Amdatu Blueprint OSGi/org.apache.felix.bundlerepository-2.0.8.jar "$ROO_HOME"/lib/deps
+cp "$ROO_CNF_HOME"/cache/3.5.0/Amdatu Blueprint OSGi/org.apache.felix.configadmin-1.8.10.jar "$ROO_HOME"/lib/deps
+cp "$ROO_CNF_HOME"/cache/3.5.0/Amdatu Blueprint OSGi/org.apache.felix.coordinator-1.0.0.jar "$ROO_HOME"/lib/deps
+cp "$ROO_CNF_HOME"/cache/3.5.0/Amdatu Blueprint OSGi/org.apache.felix.eventadmin-1.4.8.jar "$ROO_HOME"/lib/deps
+cp "$ROO_CNF_HOME"/cache/3.5.0/Amdatu Blueprint OSGi/org.apache.felix.gogo.command-0.16.0.jar "$ROO_HOME"/lib/deps
+cp "$ROO_CNF_HOME"/cache/3.5.0/Amdatu Blueprint OSGi/org.apache.felix.gogo.runtime-0.16.2.jar "$ROO_HOME"/lib/deps
+cp "$ROO_CNF_HOME"/cache/3.5.0/Amdatu Blueprint OSGi/org.apache.felix.log-1.0.1.jar "$ROO_HOME"/lib/deps
+cp "$ROO_CNF_HOME"/cache/3.5.0/Amdatu Blueprint OSGi/org.apache.felix.metatype-1.1.2.jar "$ROO_HOME"/lib/deps
+cp "$ROO_CNF_HOME"/cache/3.5.0/Amdatu Blueprint OSGi/org.apache.servicemix.bundles.freemarker-2.3.23.1.jar "$ROO_HOME"/lib/deps
+cp "$ROO_CNF_HOME"/cache/3.5.0/Amdatu Blueprint OSGi/org.apache.aries.subsystem.api-2.0.8.jar "$ROO_HOME"/lib/deps
+cp "$ROO_CNF_HOME"/cache/3.5.0/Amdatu Blueprint OSGi/org.apache.aries.util-1.1.1.jar "$ROO_HOME"/lib/deps
+cp "$ROO_CNF_HOME"/cache/3.5.0/Amdatu Blueprint OSGi/org.apache.aries.subsystem.core-2.0.8.jar "$ROO_HOME"/lib/deps
+cp "$ROO_CNF_HOME"/cache/3.5.0/Amdatu Blueprint OSGi/org.eclipse.equinox.region-1.1.0.v20120522-1841.jar "$ROO_HOME"/lib/deps
+cp "$ROO_CNF_HOME"/cache/3.5.0/Amdatu Blueprint OSGi/com.github.antlrjavaparser.antlr-java-parser-1.0.15.jar "$ROO_HOME"/lib/deps
 
-cp "$ROO_HOME_PARENT"/org.tako.libraries/generated/org.tako.libraries.bcpg-jdk15.jar "$ROO_HOME"/lib/deps
-cp "$ROO_HOME_PARENT"/org.tako.libraries/generated/org.tako.libraries.bcprov-jdk15.jar "$ROO_HOME"/lib/deps
-cp "$ROO_HOME_PARENT"/org.tako.libraries/generated/org.tako.libraries.jline.jar "$ROO_HOME"/lib/deps
-cp "$ROO_HOME_PARENT"/org.tako.libraries/generated/org.tako.libraries.json-simple.jar "$ROO_HOME"/lib/deps
+cp "$ROO_HOME_PARENT"/org.tako.libraries/generated/org.tako.wrapped.bcpg-jdk15-1.45.10.201805310100.jar "$ROO_HOME"/lib/deps
+cp "$ROO_HOME_PARENT"/org.tako.libraries/generated/org.tako.wrapped.bcprov-jdk15-1.45.10.201805310100.jar "$ROO_HOME"/lib/deps
+cp "$ROO_HOME_PARENT"/org.tako.libraries/generated/org.tako.wrapped.jline-1.0.0.S2-B0013.jar "$ROO_HOME"/lib/deps
+cp "$ROO_HOME_PARENT"/org.tako.libraries/generated/org.tako.wrapped.json-simple-1.1.10.201805310100.jar "$ROO_HOME"/lib/deps
 cp "$ROO_HOME_PARENT"/org.tako.libraries/generated/org.tako.libraries.antlr4-runtime.jar "$ROO_HOME"/lib/deps
