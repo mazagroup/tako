@@ -39,7 +39,7 @@ cp "$ROO_HOME"/main/conf/* "$ROO_HOME"/generated/osgi/conf
 # Copy Runtime Bundles
 
 # Copy deps bundles
-rsync -av --exclude={'biz.aQute.launcher*','org.apache.felix.dependencymanager*','org.apache.felix.framework*','org.tako.mda.roo*'} "$ROO_HOME"/deps/tako/jar/ "$ROO_HOME"/generated/osgi/bundle
+rsync -av --exclude={'biz.aQute.launcher*','org.apache.felix.dependencymanager*','org.apache.felix.framework*','org.tako.mda.roo*','aQute.libg*','org.eclipse.jgit*','org.tako.wrapped.antlr-ST4*','org.tako.wrapped.json-simple*','org.tako.wrapped.github-spullara-mustache*'} "$ROO_HOME"/deps/tako/jar/ "$ROO_HOME"/generated/osgi/bundle
 
 
 # Copy tako bundles
