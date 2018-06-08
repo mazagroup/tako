@@ -17,7 +17,6 @@
 	org.tako.mda.roo.classpath.antlrjavaparser;version=latest,\
 	org.tako.mda.roo.converters;version=latest,\
 	org.tako.mda.roo.process.manager;version=latest,\
-	org.tako.mda.roo.project;version=latest,\
 	org.tako.mda.roo.bnd.workspace;version=latest,\
 	org.tako.mda.roo.bootstrap;version=latest,\
 	org.tako.mda.roo.bnd.templates;version=latest,\
