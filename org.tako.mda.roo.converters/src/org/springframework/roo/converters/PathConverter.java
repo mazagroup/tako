@@ -4,14 +4,14 @@ import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
 import org.osgi.service.component.annotations.Component;
-import org.springframework.roo.project.Path;
+import org.springframework.roo.bnd.workspace.Path;
 import org.springframework.roo.shell.Completion;
 import org.springframework.roo.shell.Converter;
 import org.springframework.roo.shell.MethodTarget;
 
 /**
  * Provides conversion to and from {@link Path}.
- * 
+ *
  * @author Ben Alex
  * @since 1.0
  */

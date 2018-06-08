@@ -51,6 +51,7 @@ blueprint-repo.takodeps: http://tako-repo.s3-website-us-east-1.amazonaws.com/tak
 		slf4j.api,\
 		slf4j.jdk14,\
 		com.google.guava,\
+		com.googlecode.javaewah.JavaEWAH,\
 		org.apache.commons.codec,\
 		org.apache.commons.io,\
 		org.apache.commons.lang3,\

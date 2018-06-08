@@ -1,7 +1,7 @@
 package org.springframework.roo.converters;
 
 import static org.springframework.roo.converters.JavaPackageConverter.TOP_LEVEL_PACKAGE_SYMBOL;
-import static org.springframework.roo.project.LogicalPath.MODULE_PATH_SEPARATOR;
+import static org.springframework.roo.bnd.workspace.LogicalPath.MODULE_PATH_SEPARATOR;
 
 import java.util.logging.Logger;
 
@@ -15,8 +15,8 @@ import org.osgi.service.component.annotations.Reference;
 import org.springframework.roo.classpath.TypeLocationService;
 import org.springframework.roo.model.JavaPackage;
 import org.springframework.roo.model.JavaType;
-import org.springframework.roo.project.ProjectOperations;
-import org.springframework.roo.project.maven.Pom;
+import org.springframework.roo.bnd.workspace.ProjectOperations;
+import org.springframework.roo.bnd.workspace.maven.Pom;
 import org.springframework.roo.shell.CommandListener;
 import org.springframework.roo.shell.Converter;
 import org.springframework.roo.shell.ParseResult;
@@ -38,7 +38,7 @@ public class LastUsedImpl implements LastUsed, CommandListener {
   // ------------ OSGi component attributes ----------------
   private BundleContext context;
 
-  
+
   @Deactivate
   protected void deactivate(final ComponentContext cContext) {
     if (shell != null) {

@@ -1,6 +1,6 @@
 package org.springframework.roo.converters;
 
-import static org.springframework.roo.project.maven.Pom.ROOT_MODULE_SYMBOL;
+import static org.springframework.roo.bnd.workspace.maven.Pom.ROOT_MODULE_SYMBOL;
 import static org.springframework.roo.shell.OptionContexts.FEATURE;
 import static org.springframework.roo.shell.OptionContexts.INCLUDE_CURRENT_MODULE;
 import static org.springframework.roo.shell.OptionContexts.UPDATE;
@@ -17,8 +17,8 @@ import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 import org.springframework.roo.classpath.ModuleFeatureName;
 import org.springframework.roo.classpath.TypeLocationService;
-import org.springframework.roo.project.ProjectOperations;
-import org.springframework.roo.project.maven.Pom;
+import org.springframework.roo.bnd.workspace.ProjectOperations;
+import org.springframework.roo.bnd.workspace.maven.Pom;
 import org.springframework.roo.shell.Completion;
 import org.springframework.roo.shell.Converter;
 import org.springframework.roo.shell.MethodTarget;

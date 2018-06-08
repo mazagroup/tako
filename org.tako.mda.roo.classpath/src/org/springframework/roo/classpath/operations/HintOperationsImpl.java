@@ -16,10 +16,10 @@ import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 import org.springframework.roo.process.manager.FileManager;
-import org.springframework.roo.project.FeatureNames;
-import org.springframework.roo.project.Path;
-import org.springframework.roo.project.PathResolver;
-import org.springframework.roo.project.ProjectOperations;
+import org.springframework.roo.bnd.workspace.FeatureNames;
+import org.springframework.roo.bnd.workspace.Path;
+import org.springframework.roo.bnd.workspace.PathResolver;
+import org.springframework.roo.bnd.workspace.ProjectOperations;
 import org.springframework.roo.shell.AbstractShell;
 
 /**
@@ -29,7 +29,7 @@ import org.springframework.roo.shell.AbstractShell;
  * this hints. This is likely to be replaced in the future with a more
  * extensible implementation so third-party add-ons can provide their own hints
  * (see ROO-610 for details).
- * 
+ *
  * @author Ben Alex
  * @author Alan Stewart
  * @author Juan Carlos García

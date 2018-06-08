@@ -22,8 +22,8 @@ import org.springframework.roo.metadata.MetadataProvider;
 import org.springframework.roo.metadata.MetadataService;
 import org.springframework.roo.model.JavaType;
 import org.springframework.roo.process.manager.FileManager;
-import org.springframework.roo.project.LogicalPath;
-import org.springframework.roo.project.ProjectOperations;
+import org.springframework.roo.bnd.workspace.LogicalPath;
+import org.springframework.roo.bnd.workspace.ProjectOperations;
 import org.osgi.service.component.ComponentContext;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
@@ -40,7 +40,7 @@ import org.springframework.roo.support.logging.HandlerUtils;
  * each, also providing type creation and deleting methods. Prior to 1.2.0, the
  * default implementation of PhysicalTypeMetadataProvider was
  * JavaParserMetadataProvider.
- * 
+ *
  * @author Ben Alex
  * @author James Tyrrell
  * @since 1.2.0

@@ -60,11 +60,11 @@ cp "$ROO_HOME_PARENT"/org.tako.mda.roo.classpath/generated/org.tako.mda.roo.clas
 cp "$ROO_HOME_PARENT"/org.tako.mda.roo.classpath.antlrjavaparser/generated/org.tako.mda.roo.classpath.antlrjavaparser.jar "$ROO_HOME"/generated/osgi/bundle
 cp "$ROO_HOME_PARENT"/org.tako.mda.roo.converters/generated/org.tako.mda.roo.converters.jar "$ROO_HOME"/generated/osgi/bundle
 cp "$ROO_HOME_PARENT"/org.tako.mda.roo.process.manager/generated/org.tako.mda.roo.process.manager.jar "$ROO_HOME"/generated/osgi/bundle
-cp "$ROO_HOME_PARENT"/org.tako.mda.roo.project/generated/org.tako.mda.roo.project.jar "$ROO_HOME"/generated/osgi/bundle
 cp "$ROO_HOME_PARENT"/org.tako.mda.roo.bnd.templates/generated/org.tako.mda.roo.bnd.templates.jar "$ROO_HOME"/generated/osgi/bundle
 cp "$ROO_HOME_PARENT"/org.tako.mda.roo.bnd.templating/generated/org.tako.mda.roo.bnd.templating.jar "$ROO_HOME"/generated/osgi/bundle
 cp "$ROO_HOME_PARENT"/org.tako.mda.roo.bnd.templating.gitrepo/generated/org.tako.mda.roo.bnd.templating.gitrepo.jar "$ROO_HOME"/generated/osgi/bundle
-
+# cp "$ROO_HOME_PARENT"/org.tako.mda.roo.project/generated/org.tako.mda.roo.project.jar "$ROO_HOME"/generated/osgi/bundles
+cp "$ROO_HOME_PARENT"/org.tako.mda.roo.bnd.workspace/generated/org.tako.mda.roo.bnd.workspace.jar "$ROO_HOME"/generated/osgi/bundles
 
 # Move the startup-related JAR from the "bundle" directory to the "bin" directory
 cp "$ROO_HOME"/deps/tako/jar/org.apache.felix.framework-5.4.0.jar "$ROO_HOME"/generated/osgi/bin

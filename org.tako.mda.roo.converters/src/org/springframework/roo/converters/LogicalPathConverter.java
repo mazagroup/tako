@@ -4,10 +4,10 @@ import java.util.List;
 
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
-import org.springframework.roo.project.LogicalPath;
-import org.springframework.roo.project.PhysicalPath;
-import org.springframework.roo.project.ProjectOperations;
-import org.springframework.roo.project.maven.Pom;
+import org.springframework.roo.bnd.workspace.LogicalPath;
+import org.springframework.roo.bnd.workspace.PhysicalPath;
+import org.springframework.roo.bnd.workspace.ProjectOperations;
+import org.springframework.roo.bnd.workspace.maven.Pom;
 import org.springframework.roo.shell.Completion;
 import org.springframework.roo.shell.Converter;
 import org.springframework.roo.shell.MethodTarget;

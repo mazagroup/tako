@@ -2,11 +2,11 @@ package org.springframework.roo.classpath;
 
 import java.util.List;
 
-import org.springframework.roo.project.maven.Pom;
+import org.springframework.roo.bnd.workspace.maven.Pom;
 
 /**
  * Implemented by the different module types to identify and get the modules that have features.
- * 
+ *
  * @author Paula Navarro
  * @since 2.0
  */
@@ -14,14 +14,14 @@ public interface ModuleFeature {
 
   /**
    * Returns module feature name
-   * 
+   *
    * @return
    */
   ModuleFeatureName getName();
 
   /**
    * Gets the list of modules that have this module feature installed
-   * @return 
+   * @return
    */
   List<Pom> getModules();
 
@@ -33,7 +33,7 @@ public interface ModuleFeature {
 
   /**
    * Indicates whether the specified module in has installed this module feature.
-   * 
+   *
    * @param module
    * @return
    */

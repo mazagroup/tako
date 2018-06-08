@@ -12,13 +12,13 @@ import org.springframework.roo.classpath.details.annotations.AnnotationMetadata;
 import org.springframework.roo.metadata.MetadataService;
 import org.springframework.roo.model.JavaSymbolName;
 import org.springframework.roo.process.manager.FileManager;
-import org.springframework.roo.project.Dependency;
-import org.springframework.roo.project.LogicalPath;
-import org.springframework.roo.project.ProjectOperations;
+import org.springframework.roo.bnd.workspace.Dependency;
+import org.springframework.roo.bnd.workspace.LogicalPath;
+import org.springframework.roo.bnd.workspace.ProjectOperations;
 
 /**
  * Implementation of {@link TypeManagementService}.
- * 
+ *
  * @author Alan Stewart
  * @since 1.1.2
  */

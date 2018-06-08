@@ -13,14 +13,14 @@ import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.springframework.roo.classpath.details.ClassOrInterfaceTypeDetails;
 import org.springframework.roo.model.JavaType;
-import org.springframework.roo.project.ProjectOperations;
-import org.springframework.roo.project.maven.Pom;
+import org.springframework.roo.bnd.workspace.ProjectOperations;
+import org.springframework.roo.bnd.workspace.maven.Pom;
 import org.springframework.roo.support.logging.HandlerUtils;
 import org.osgi.framework.Constants;
 
 /**
  * Module feature that represents the modules which contain a class annotated with @SpringBootApplication
- * 
+ *
  * @author Paula Navarro
  * @since 2.0
  */

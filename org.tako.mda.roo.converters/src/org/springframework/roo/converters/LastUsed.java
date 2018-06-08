@@ -2,11 +2,11 @@ package org.springframework.roo.converters;
 
 import org.springframework.roo.model.JavaPackage;
 import org.springframework.roo.model.JavaType;
-import org.springframework.roo.project.maven.Pom;
+import org.springframework.roo.bnd.workspace.maven.Pom;
 
 /**
  * Interface for {@link LastUsedImpl}.
- * 
+ *
  * @author Ben Alex
  * @since 1.1
  */
@@ -58,7 +58,7 @@ public interface LastUsed {
 
   /**
    * Sets the last used type and the module to which it belongs
-   * 
+   *
    * @param javaType
    * @param module
    */
@@ -66,7 +66,7 @@ public interface LastUsed {
 
   /**
    * Sets the last used type and the module to which it belongs not verified
-   * 
+   *
    * @param result
    * @param module
    */

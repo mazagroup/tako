@@ -37,15 +37,15 @@ import org.springframework.roo.model.JavaSymbolName;
 import org.springframework.roo.model.JavaType;
 import org.springframework.roo.model.JdkJavaType;
 import org.springframework.roo.model.ReservedWords;
-import org.springframework.roo.project.LogicalPath;
-import org.springframework.roo.project.Path;
-import org.springframework.roo.project.PathResolver;
-import org.springframework.roo.project.ProjectOperations;
+import org.springframework.roo.bnd.workspace.LogicalPath;
+import org.springframework.roo.bnd.workspace.Path;
+import org.springframework.roo.bnd.workspace.PathResolver;
+import org.springframework.roo.bnd.workspace.ProjectOperations;
 import org.springframework.roo.shell.converters.StaticFieldConverter;
 
 /**
  * OSGi implementation of {@link ClasspathOperations}.
- * 
+ *
  * @author Andrew Swan
  * @since 1.2.0
  */

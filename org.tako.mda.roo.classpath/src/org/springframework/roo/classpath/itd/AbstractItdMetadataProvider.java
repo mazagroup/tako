@@ -25,8 +25,8 @@ import org.springframework.roo.metadata.MetadataNotificationListener;
 import org.springframework.roo.metadata.MetadataProvider;
 import org.springframework.roo.model.JavaType;
 import org.springframework.roo.process.manager.FileManager;
-import org.springframework.roo.project.LogicalPath;
-import org.springframework.roo.project.Path;
+import org.springframework.roo.bnd.workspace.LogicalPath;
+import org.springframework.roo.bnd.workspace.Path;
 import org.springframework.roo.support.logging.HandlerUtils;
 
 import java.util.ArrayList;

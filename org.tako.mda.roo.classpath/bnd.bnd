@@ -7,7 +7,7 @@
 	org.tako.mda.roo.support;version=latest,\
 	org.tako.mda.roo.shell;version=latest,\
 	org.tako.mda.roo.felix;version=latest,\
-	org.tako.mda.roo.project;version=latest,\
+	org.tako.mda.roo.bnd.workspace;version=latest,\
 	org.tako.mda.roo.model;version=latest,\
 	org.tako.mda.roo.process.manager;version=latest,\
 	org.tako.mda.roo.metadata;version=latest,\

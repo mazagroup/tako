@@ -9,7 +9,7 @@ import org.apache.commons.lang3.Validate;
 import org.osgi.service.component.annotations.Component;
 import org.springframework.roo.classpath.details.ClassOrInterfaceTypeDetails;
 import org.springframework.roo.model.JavaType;
-import org.springframework.roo.project.maven.Pom;
+import org.springframework.roo.bnd.workspace.maven.Pom;
 
 @Component(service=TypeCache.class)
 public class TypeCacheImpl implements TypeCache {

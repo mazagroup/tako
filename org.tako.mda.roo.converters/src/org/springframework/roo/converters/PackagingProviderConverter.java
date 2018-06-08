@@ -5,15 +5,15 @@ import java.util.List;
 import org.apache.commons.lang3.Validate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
-import org.springframework.roo.project.packaging.PackagingProvider;
-import org.springframework.roo.project.packaging.PackagingProviderRegistry;
+import org.springframework.roo.bnd.workspace.packaging.PackagingProvider;
+import org.springframework.roo.bnd.workspace.packaging.PackagingProviderRegistry;
 import org.springframework.roo.shell.Completion;
 import org.springframework.roo.shell.Converter;
 import org.springframework.roo.shell.MethodTarget;
 
 /**
  * A {@link Converter} for {@link PackagingProvider}s
- * 
+ *
  * @author Andrew Swan
  * @since 1.2.0
  */

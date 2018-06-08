@@ -1,6 +1,6 @@
 package org.springframework.roo.converters;
 
-import static org.springframework.roo.project.LogicalPath.MODULE_PATH_SEPARATOR;
+import static org.springframework.roo.bnd.workspace.LogicalPath.MODULE_PATH_SEPARATOR;
 import static org.springframework.roo.shell.OptionContexts.FEATURE;
 import static org.springframework.roo.shell.OptionContexts.UPDATE;
 import static org.springframework.roo.shell.OptionContexts.UPDATELAST;
@@ -20,8 +20,8 @@ import org.springframework.roo.classpath.TypeLocationService;
 import org.springframework.roo.model.JavaPackage;
 import org.springframework.roo.model.JavaType;
 import org.springframework.roo.process.manager.FileManager;
-import org.springframework.roo.project.ProjectOperations;
-import org.springframework.roo.project.maven.Pom;
+import org.springframework.roo.bnd.workspace.ProjectOperations;
+import org.springframework.roo.bnd.workspace.maven.Pom;
 import org.springframework.roo.shell.Completion;
 import org.springframework.roo.shell.Converter;
 import org.springframework.roo.shell.MethodTarget;
@@ -29,7 +29,7 @@ import org.springframework.roo.shell.MethodTarget;
 /**
  * A {@link Converter} for {@link JavaPackage}s, with support for using
  * {@value #TOP_LEVEL_PACKAGE_SYMBOL} to denote the user's top-level package.
- * 
+ *
  * @author Ben Alex
  * @author Paula Navarro
  * @since 1.0
@@ -196,7 +196,7 @@ public class JavaPackageConverter implements Converter<JavaPackage> {
   /**
    * Replaces the {@link #TOP_LEVEL_PACKAGE_SYMBOL} at the beginning of the
    * given text with the module's top-level package
-   * 
+   *
    * @param moduleName
    * @param text
    * @return a well-formed Java package name (might have a trailing dot)

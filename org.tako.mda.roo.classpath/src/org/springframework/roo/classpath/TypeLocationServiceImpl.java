@@ -19,11 +19,11 @@ import org.springframework.roo.model.JavaPackage;
 import org.springframework.roo.model.JavaSymbolName;
 import org.springframework.roo.model.JavaType;
 import org.springframework.roo.process.manager.FileManager;
-import org.springframework.roo.project.Dependency;
-import org.springframework.roo.project.LogicalPath;
-import org.springframework.roo.project.PhysicalPath;
-import org.springframework.roo.project.ProjectOperations;
-import org.springframework.roo.project.maven.Pom;
+import org.springframework.roo.bnd.workspace.Dependency;
+import org.springframework.roo.bnd.workspace.LogicalPath;
+import org.springframework.roo.bnd.workspace.PhysicalPath;
+import org.springframework.roo.bnd.workspace.ProjectOperations;
+import org.springframework.roo.bnd.workspace.maven.Pom;
 import org.springframework.roo.shell.NaturalOrderComparator;
 import org.springframework.roo.support.logging.HandlerUtils;
 import org.springframework.roo.support.util.FileUtils;
@@ -49,7 +49,7 @@ import java.util.logging.Logger;
  * <p>
  * For performance reasons automatically caches the queries. The cache is
  * invalidated on changes to the file system.
- * 
+ *
  * @author Alan Stewart
  * @author Ben Alex
  * @author Stefan Schmidt
@@ -84,7 +84,7 @@ public class TypeLocationServiceImpl implements TypeLocationService {
   /**
    * Returns all packages leading up to the given package, e.g. if the given
    * package is "com.foo.bar", returns ["com", "com.foo", "com.foo.bar"].
-   * 
+   *
    * @param leafPackage the fully-qualified package to parse (required)
    * @return a non-<code>null</code> iterable
    */
@@ -105,7 +105,7 @@ public class TypeLocationServiceImpl implements TypeLocationService {
 
   /**
    * Returns the lowest-level package that contains the given number of types.
-   * 
+   *
    * @param typeCount the number of types to look for
    * @param typesByPackage maps package names to type names; a given type will
    *            appear under all of its parent packages (required)
@@ -134,7 +134,7 @@ public class TypeLocationServiceImpl implements TypeLocationService {
 
   /**
    * Sorts the given string-keyed map by the length of its keys.
-   * 
+   *
    * @param <V> the type of the map's values
    * @param mapToSort the map to sort (not changed)
    * @return the sorted version of the map
@@ -463,7 +463,7 @@ public class TypeLocationServiceImpl implements TypeLocationService {
    * {"com.foo.bar.A", "com.foo.baz.B"}, "com.foo.bar": {"com.foo.bar.A"},
    * "com.foo.baz": {"com.foo.baz.B"} All packages that directly contain a
    * type are added to the given set.
-   * 
+   *
    * @param typesInModule the Java types within the module in question
    * @param typePackages the set to which to add each type's package
    * @return a non-<code>null</code> map laid out as above
@@ -578,7 +578,7 @@ public class TypeLocationServiceImpl implements TypeLocationService {
   /**
    * Obtains the a fresh copy of the {@link ClassOrInterfaceTypeDetails} for
    * the given physical type.
-   * 
+   *
    * @param physicalTypeIdentifier to lookup (required)
    * @return the requested details (or <code>null</code> if unavailable)
    */

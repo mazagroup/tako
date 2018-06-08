@@ -7,14 +7,14 @@ import java.util.Set;
 import org.springframework.roo.classpath.details.ClassOrInterfaceTypeDetails;
 import org.springframework.roo.model.JavaPackage;
 import org.springframework.roo.model.JavaType;
-import org.springframework.roo.project.Dependency;
-import org.springframework.roo.project.LogicalPath;
-import org.springframework.roo.project.ProjectMetadata;
-import org.springframework.roo.project.maven.Pom;
+import org.springframework.roo.bnd.workspace.Dependency;
+import org.springframework.roo.bnd.workspace.LogicalPath;
+import org.springframework.roo.bnd.workspace.ProjectMetadata;
+import org.springframework.roo.bnd.workspace.maven.Pom;
 
 /**
  * Locates types.
- * 
+ *
  * @author Alan Stewart
  * @author James Tyrrell
  * @author Paula Navarro
@@ -32,7 +32,7 @@ public interface TypeLocationService {
    * An exception is thrown if this method is called before there is
    * {@link ProjectMetadata} available, or if the on-disk representation
    * cannot be modified for any reason.
-   * 
+   *
    * @param moduleFeatureName the module feature (required)
    * @param dependencies the dependencies to add (required)
    */
@@ -41,9 +41,9 @@ public interface TypeLocationService {
 
   /**
    * Adds to the given module the dependency with the module that contains the java type.
-   * 
+   *
    * @param moduleName the name of the module where to install the dependency (required)
-   * @param moduleJavaType the java type that belongs to the module to act upon 
+   * @param moduleJavaType the java type that belongs to the module to act upon
    */
   void addModuleDependency(String module, JavaType moduleJavaType);
 
@@ -56,7 +56,7 @@ public interface TypeLocationService {
    * An exception is thrown if this method is called before there is
    * {@link ProjectMetadata} available, or if the on-disk representation
    * cannot be modified for any reason.
-   * 
+   *
    * @param moduleFeatureName the module feature (required)
    * @param dependencies the dependencies to remove (required)
    */
@@ -66,7 +66,7 @@ public interface TypeLocationService {
   /**
    * Returns a set of {@link ClassOrInterfaceTypeDetails}s that possess the
    * specified annotations (specified as a vararg).
-   * 
+   *
    * @param annotationsToDetect the annotations (as a vararg) to detect on a
    *            type.
    * @return a set of ClassOrInterfaceTypeDetails that have the specified
@@ -78,7 +78,7 @@ public interface TypeLocationService {
   /**
    * Returns a set of {@link ClassOrInterfaceTypeDetails}s that possess the
    * specified tag.
-   * 
+   *
    * @param tag the tag to detect on a type.
    * @return a set of ClassOrInterfaceTypeDetails that have the specified tag.
    */
@@ -87,7 +87,7 @@ public interface TypeLocationService {
   /**
    * Returns a set of {@link JavaType}s that possess the specified annotations
    * (specified as a vararg).
-   * 
+   *
    * @param annotationsToDetect the annotations (as a vararg) to detect on a
    *            type.
    * @return a set of types that have the specified annotations.
@@ -97,7 +97,7 @@ public interface TypeLocationService {
   /**
    * Returns a set of {@link JavaType}s that possess the specified list of
    * annotations.
-   * 
+   *
    * @param annotationsToDetect the list of annotations to detect on a type.
    * @return a set of types that have the specified annotations.
    */
@@ -105,7 +105,7 @@ public interface TypeLocationService {
 
   /**
    * Returns a list with all JavaPackages for a given module.
-   * 
+   *
    * @param module the Pom of the module to search for.
    * @return a List<JavaPackage> with all the module packages.
    */
@@ -113,7 +113,7 @@ public interface TypeLocationService {
 
   /**
    * Returns a list with all JavaPackages for a given module.
-   * 
+   *
    * @param module the String with the module name to search for.
    * @return a List<JavaPackage> with all the module packages.
    */
@@ -125,7 +125,7 @@ public interface TypeLocationService {
    * <p>
    * Equivalent to constructing the physical type id from the given arguments
    * and calling {@link #getPhysicalTypeCanonicalPath(String)}.
-   * 
+   *
    * @param javaType the type's {@link JavaType} (required)
    * @param path the type's logical path
    * @return the canonical path (never blank, but might not exist)
@@ -135,7 +135,7 @@ public interface TypeLocationService {
   /**
    * Returns the canonical path that a type with the given physical type id
    * would have; this type need not exist.
-   * 
+   *
    * @param physicalTypeId the physical type's metadata id (required)
    * @return the canonical path (never blank, but might not exist)
    */
@@ -152,7 +152,7 @@ public interface TypeLocationService {
    * dependent (i.e. a {@link PhysicalTypeIdentifier} relates to a given
    * physical file, whereas a {@link JavaType} simply represents a type on the
    * classpath).
-   * 
+   *
    * @param javaType the type to locate (required)
    * @return the string (in {@link PhysicalTypeIdentifier} format) if found,
    *         or <code>null</code> if not found
@@ -162,7 +162,7 @@ public interface TypeLocationService {
   /**
    * Returns the physical type identifier for the Java source file with the
    * given canonical path.
-   * 
+   *
    * @param fileIdentifier the path to the physical type (required)
    * @return the physical type identifier if the given path matches an
    *         existing Java source file, otherwise <code>null</code>
@@ -183,7 +183,7 @@ public interface TypeLocationService {
 
   /**
    * Returns the modules that have installed a module feature.
-   * 
+   *
    * @param moduleFeatureName the module feature (required)
    * @return a non-<code>null</code> collection
    */
@@ -191,15 +191,15 @@ public interface TypeLocationService {
 
   /**
    * Returns the list of module names that have installed a module feature.
-   * 
+   *
    * @param moduleFeatureName the module feature (required)
-   * @return a non-<code>null</code> collection 
+   * @return a non-<code>null</code> collection
    */
   Collection<String> getModuleNames(ModuleFeatureName moduleFeatureName);
 
   /**
    * Returns the details of the given Java type from within the user project.
-   * 
+   *
    * @param javaType the type to look for (required)
    * @return <code>null</code> if the type doesn't exist in the project
    */
@@ -210,7 +210,7 @@ public interface TypeLocationService {
    * physical type identifier. If the physical type identifier doesn't
    * represent a valid type an exception is thrown. This method will return
    * null if the {@link ClassOrInterfaceTypeDetails} can't be found.
-   * 
+   *
    * @param physicalTypeId the physical type metadata id (can be blank)
    * @return the resolved {@link ClassOrInterfaceTypeDetails}, or
    *         <code>null</code> if the details can't be found (e.g. the given
@@ -220,7 +220,7 @@ public interface TypeLocationService {
 
   /**
    * Returns the {@link LogicalPath} containing the given {@link JavaType}.
-   * 
+   *
    * @param javaType the {@link JavaType} for which to return the
    *            {@link LogicalPath}
    * @return <code>null</code> if that type doesn't exist in the project
@@ -229,7 +229,7 @@ public interface TypeLocationService {
 
   /**
    * Returns the Java types that belong to the given module.
-   * 
+   *
    * @param module
    * @return a non-<code>null</code> collection
    * @since 1.2.1
@@ -238,7 +238,7 @@ public interface TypeLocationService {
 
   /**
    * Returns the Java types that belong to the given module.
-   * 
+   *
    * @param modulePath
    * @return a non-<code>null</code> collection of fully-qualified type names
    * @deprecated use {@link #getTypesForModule(Pom)} instead; more strongly
@@ -251,7 +251,7 @@ public interface TypeLocationService {
   /**
    * Indicates whether the passed in type has changed since last invocation by
    * the requesting class.
-   * 
+   *
    * @param requestingClass the class requesting the changed types
    * @param javaType the type to lookup to see if a change has occurred
    * @return a collection of MIDs which represent changed types
@@ -260,17 +260,17 @@ public interface TypeLocationService {
 
   /**
    * Indicates whether the specified module in has installed the module feature.
-   * 
+   *
    * @param module the module to inspect its installed features (required)
    * @param moduleFeatureName the module feature (required)
-   * @return 
+   * @return
    */
   boolean hasModuleFeature(Pom module, ModuleFeatureName moduleFeatureName);
 
 
   /**
    * Indicates whether the given type exists anywhere in the user project
-   * 
+   *
    * @param javaType the type to check for (can be <code>null</code>)
    * @return <code>false</code> if a <code>null</code> type is given
    */
@@ -280,7 +280,7 @@ public interface TypeLocationService {
    * Processes types with the specified list of annotations and uses the
    * supplied {@link LocatedTypeCallback callback} implementation to process
    * the located types.
-   * 
+   *
    * @param annotationsToDetect the list of annotations to detect on a type.
    * @param callback the {@link LocatedTypeCallback} to handle the processing
    *            of the located type

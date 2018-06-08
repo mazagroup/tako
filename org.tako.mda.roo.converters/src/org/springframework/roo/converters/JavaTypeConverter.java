@@ -1,7 +1,7 @@
 package org.springframework.roo.converters;
 
 import static org.springframework.roo.converters.JavaPackageConverter.TOP_LEVEL_PACKAGE_SYMBOL;
-import static org.springframework.roo.project.LogicalPath.MODULE_PATH_SEPARATOR;
+import static org.springframework.roo.bnd.workspace.LogicalPath.MODULE_PATH_SEPARATOR;
 import static org.springframework.roo.shell.OptionContexts.ENUMERATION;
 import static org.springframework.roo.shell.OptionContexts.INTERFACE;
 import static org.springframework.roo.shell.OptionContexts.PROJECT;
@@ -36,8 +36,8 @@ import org.springframework.roo.classpath.details.ClassOrInterfaceTypeDetails;
 import org.springframework.roo.model.JavaPackage;
 import org.springframework.roo.model.JavaType;
 import org.springframework.roo.process.manager.FileManager;
-import org.springframework.roo.project.ProjectOperations;
-import org.springframework.roo.project.maven.Pom;
+import org.springframework.roo.bnd.workspace.ProjectOperations;
+import org.springframework.roo.bnd.workspace.maven.Pom;
 import org.springframework.roo.shell.Completion;
 import org.springframework.roo.shell.Converter;
 import org.springframework.roo.shell.MethodTarget;
@@ -46,7 +46,7 @@ import org.springframework.roo.shell.MethodTarget;
  * Provides conversion to and from {@link JavaType}, with full support for using
  * {@value JavaPackageConverter#TOP_LEVEL_PACKAGE_SYMBOL} as denoting the user's
  * top-level package.
- * 
+ *
  * @author Ben Alex
  * @since 1.0
  */
@@ -145,8 +145,8 @@ public class JavaTypeConverter implements Converter<JavaType> {
     }
     final JavaType result = new JavaType(newValue, module.getModuleName());
 
-    // ROO-3581: On this time we don't know if current result 
-    // exists as type on generated project. We need to save as 
+    // ROO-3581: On this time we don't know if current result
+    // exists as type on generated project. We need to save as
     // not verified
     if (StringUtils.contains(optionContext, UPDATE)
         || StringUtils.contains(optionContext, UPDATELAST)) {

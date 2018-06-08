@@ -5,7 +5,7 @@ import org.springframework.roo.classpath.PhysicalTypeMetadata;
 import org.springframework.roo.classpath.PhysicalTypeMetadataProvider;
 import org.springframework.roo.metadata.MetadataProvider;
 import org.springframework.roo.metadata.MetadataService;
-import org.springframework.roo.project.Path;
+import org.springframework.roo.bnd.workspace.Path;
 
 /**
  * Indicates a {@link MetadataProvider} that supports ITDs.
@@ -56,7 +56,7 @@ import org.springframework.roo.project.Path;
  * {@link org.springframework.roo.file.monitor.polling.PollingFileMonitorService}
  * for the .aj it should monitor (even if the .aj does not yet exist, because
  * the metadata will create it).
- * 
+ *
  * @author Ben Alex
  * @since 1.0
  */
@@ -73,7 +73,7 @@ public interface ItdMetadataProvider extends MetadataProvider {
    * value from this method do not guarantee that metadata for the returned
    * identifier will subsequently made available. As such this method is a
    * basic conversion method and shouldn't perform any analysis.
-   * 
+   *
    * @param physicalJavaTypeIdentifier to convert into a local metadata
    *            identifier (required)
    * @return an identifier acceptable to this provider (must not return null
@@ -87,7 +87,7 @@ public interface ItdMetadataProvider extends MetadataProvider {
    * {@link PhysicalTypeIdentifierNamingUtils} filename + "_Roo_" portion.
    * This suffix should not contain any periods and as such does not represent
    * the filename's extension.
-   * 
+   *
    * @return the filename suffix that makes ITDs produced by this
    *         implementation unique (cannot be null or an empty string)
    */

@@ -4,8 +4,8 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.Validate;
 import org.springframework.roo.metadata.MetadataIdentificationUtils;
 import org.springframework.roo.model.JavaType;
-import org.springframework.roo.project.LogicalPath;
-import org.springframework.roo.project.Path;
+import org.springframework.roo.bnd.workspace.LogicalPath;
+import org.springframework.roo.bnd.workspace.Path;
 
 /**
  * Produces metadata identification strings that represent a {@link JavaType}
@@ -17,7 +17,7 @@ import org.springframework.roo.project.Path;
  * methods are not specific to physical types; either rename this class, move
  * them somewhere more generic, and/or make them more specific, e.g. hardcode
  * the "metadata class" arguments to that of physical types.
- * 
+ *
  * @author Ben Alex
  * @since 1.0
  */
@@ -27,7 +27,7 @@ public final class PhysicalTypeIdentifierNamingUtils {
 
   /**
    * Creates a metadata ID from the given inputs
-   * 
+   *
    * @param metadataClass the fully-qualified name of the metadata class
    *            (required)
    * @param projectType the fully-qualified name of the user project type to
@@ -45,7 +45,7 @@ public final class PhysicalTypeIdentifierNamingUtils {
 
   /**
    * Parses the instance key from the given metadata ID.
-   * 
+   *
    * @param metadataClass the fully-qualified name of the metadata type
    *            (required)
    * @param metadataId the ID of the metadata instance (must identify an
@@ -73,7 +73,7 @@ public final class PhysicalTypeIdentifierNamingUtils {
   /**
    * Returns the user project type with which the given metadata ID is
    * associated.
-   * 
+   *
    * @param metadataClass the fully-qualified name of the metadata type
    *            (required)
    * @param metadataId the ID of the metadata instance (must identify an
@@ -89,7 +89,7 @@ public final class PhysicalTypeIdentifierNamingUtils {
   /**
    * Returns the name of the project module that contains the metadata item
    * with the given id.
-   * 
+   *
    * @param metadataId must be a valid metadata instance id
    * @return a non-<code>null</code> module name (blank means the root or only
    *         module)
@@ -101,7 +101,7 @@ public final class PhysicalTypeIdentifierNamingUtils {
 
   /**
    * Returns the {@link LogicalPath} of the metadata item with the given id.
-   * 
+   *
    * @param metadataId must be a valid metadata instance id
    * @return a non-<code>null</code> path
    */
@@ -115,7 +115,7 @@ public final class PhysicalTypeIdentifierNamingUtils {
 
   /**
    * Parses the user project path from the given metadata ID.
-   * 
+   *
    * @param metadataClass the fully-qualified name of the metadata type
    *            (required)
    * @param metadataId the ID of the metadata instance (must identify an
@@ -138,7 +138,7 @@ public final class PhysicalTypeIdentifierNamingUtils {
   /**
    * Indicates whether the given metadata id appears to identify an instance
    * of the given metadata class.
-   * 
+   *
    * @param metadataClass the fully-qualified name of the expected metadata
    *            type (can be blank)
    * @param metadataId the ID to evaluate (can be blank)
@@ -152,14 +152,14 @@ public final class PhysicalTypeIdentifierNamingUtils {
 
   /**
    * Constructor is private to prevent instantiation
-   * 
+   *
    * @since 1.2.0
    */
   private PhysicalTypeIdentifierNamingUtils() {}
 
   /**
    * Extracts module name from a metadata identification string
-   * 
+   *
    * @param metadataId
    * @return module name or null if metadataId is not a valid metadata identification string
    */
